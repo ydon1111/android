@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 import fastcampus.aop.part3.chattingapp.databinding.ActivityLogInBinding
 
@@ -19,6 +21,18 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //인증 초기화
+        mAuth = Firebase.auth
+
+        //로그인 버튼 이벤트
+        binding.loginBtn.setOnClickListener {
+
+            val email = binding.emailEdit.text.toString()
+            val password = binding.passwordEdit.text.toString()
+
+            login(email, password)
+        }
 
         //회원가입 버튼 이벤트
         binding.signUpBtn.setOnClickListener {
