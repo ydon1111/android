@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/searchFragment_nav">
+    <fragment
+        android:id="@+id/searchFragment_nav"
+        android:name="com.example.movieapp.ui.search.SearchFragment"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_nav_to_favoritesFragment_nav"
+            app:destination="@id/favoritesFragment_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment_nav"
+        android:name="com.example.movieapp.ui.favorites.FavoritesFragment"
+        tools:layout="@layout/fragment_favorites" >
+        <argument
+            android:name="favorites_list"
+            app:argType="reference" />
+    </fragment>
+</navigation>
