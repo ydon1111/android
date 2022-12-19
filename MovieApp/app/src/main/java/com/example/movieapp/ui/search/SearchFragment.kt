@@ -23,16 +23,12 @@ import javax.inject.Inject
 class SearchFragment @Inject constructor() : Fragment() {
 
     private lateinit var binding: FragmentSearchBinding
-    val viewModel: MovieViewModel by viewModels()
-
-//    val searchViewModel : SearchViewModel by viewModels()
-
-
-     private val movieAdapter = MoviePagingAdapter(viewModel)
-
-
+    private lateinit var movieAdapter: MoviePagingAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val viewModel: MovieViewModel by viewModels()
+        movieAdapter = MoviePagingAdapter(viewModel)
+
         // Load Search text
         binding.movieSearch.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {

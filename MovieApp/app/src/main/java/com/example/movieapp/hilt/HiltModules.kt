@@ -2,7 +2,7 @@ package com.example.movieapp.hilt
 
 import android.content.Context
 import androidx.room.Room
-//import com.example.movieapp.data.favorites.FavoriteMovieDatabase
+import com.example.movieapp.data.favorites.FavoriteMovieDatabase
 import com.example.movieapp.remote.MovieInterface
 
 import com.example.movieapp.utils.Constants
@@ -29,19 +29,19 @@ object HiltModules {
     }
 
 
-//    @Provides
-//    @Singleton
-//    fun provideFavMovieDatabase(
-//        @ApplicationContext app:Context
-//    )=Room.databaseBuilder(
-//        app,
-//        FavoriteMovieDatabase::class.java,
-//        "movie_db"
-//    ).build()
-//
-//    @Provides
-//    @Singleton
-//    fun provideFavMovieDao(db: FavoriteMovieDatabase) = db.getFavoriteMovieDao()
+    @Provides
+    @Singleton
+    fun provideFavMovieDatabase(
+        @ApplicationContext app:Context
+    )=Room.databaseBuilder(
+        app,
+        FavoriteMovieDatabase::class.java,
+        "movie_db"
+    ).build()
+
+    @Provides
+    @Singleton
+    fun provideFavMovieDao(db: FavoriteMovieDatabase) = db.getFavoriteMovieDao()
 
 
 }

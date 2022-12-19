@@ -8,6 +8,7 @@ plugins {
     id 'kotlin-parcelize'
 
 
+
 }
 
 android {
@@ -27,18 +28,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
-            }
-        }
     }
-
-    //groovy
-//    configurations.all {
-//        resolutionStrategy.force "org.antlr:antlr4-runtime:4.7.1"
-//        resolutionStrategy.force "org.antlr:antlr4-tool:4.7.1"
-//    }
 
     buildTypes {
         release {
@@ -97,7 +87,7 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-runtime:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
     androidTestImplementation "androidx.room:room-testing:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
@@ -108,5 +98,5 @@ dependencies {
     kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
 
     // Room m1 error
-    kapt "org.xerial:sqlite-jdbc:3.34.0"
+     kapt "org.xerial:sqlite-jdbc:3.34.0"
 }

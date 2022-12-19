@@ -6,10 +6,8 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import androidx.paging.liveData
-import androidx.room.Room
 import com.example.movieapp.data.Search
 import com.example.movieapp.data.favorites.FavoriteMovie
-import com.example.movieapp.data.favorites.FavoriteMovieDatabase
 import com.example.movieapp.data.favorites.FavoriteMovieRepository
 
 import com.example.movieapp.remote.MovieInterface
@@ -26,16 +24,11 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieViewModel @Inject constructor(
     @ApplicationContext val appContext: Context,
-    private val movieInterface: MovieInterface
+    private val movieInterface: MovieInterface,
+    private val repository: FavoriteMovieRepository
     ) : ViewModel() {
 
-    private val repository = FavoriteMovieRepository(
-        Room.databaseBuilder(
-            appContext,
-            FavoriteMovieDatabase::class.java,
-            "movie_db"
-        ).build().getFavoriteMovieDao()
-    )
+
     private val query = MutableLiveData<String>()
 
     val list = query.switchMap { query ->

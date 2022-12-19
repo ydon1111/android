@@ -20,22 +20,24 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
 
-    private val viewModel by viewModels<FavoritesViewModel>()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentFavoritesBinding.bind(view)
 
+
+        super.onViewCreated(view, savedInstanceState)
+        val binding =  FragmentFavoritesBinding.bind(view)
+        val viewModel by viewModels<FavoritesViewModel>()
         val adapter = FavoritesAdapter()
 
 
-//        viewModel.movies.(observeviewLifecycleOwner){
-//            adapter.setMovieList(it)
-//            binding.apply {
-//                rvFavoriteMovie.setHasFixedSize(true)
-//                rvFavoriteMovie.adapter = adapter
-//            }
-//        }
+        viewModel.movies.observe(viewLifecycleOwner){
+            adapter.setMovieList(it)
+            binding.apply {
+                rvFavoriteMovie.setHasFixedSize(true)
+                rvFavoriteMovie.adapter = adapter
+            }
+        }
 
         adapter.setOnItemClickCallback(object : FavoritesAdapter.OnItemClickCallback{
             override fun onItemClick(favoriteMovie: FavoriteMovie) {
@@ -46,7 +48,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
                     favoriteMovie.Year,
                     favoriteMovie.Type
                 )
-//                val action = FavoritesFragmentDirections.actionFavoritesFragmentNavToSearchFragmentNav(movie)
+//                val action = .actionFavoritesFragmentNavToSearchFragmentNav(movie)
                 findNavController()
             }
 
