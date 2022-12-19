@@ -15,5 +15,4 @@ interface MovieInterface {
         @Query("apiKey") apiKey: String
     ): Response<MovieResponse>
 
-
 }

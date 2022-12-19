@@ -1,11 +1,15 @@
 package com.example.movieapp.hilt
 
+import android.content.Context
+import androidx.room.Room
+//import com.example.movieapp.data.favorites.FavoriteMovieDatabase
 import com.example.movieapp.remote.MovieInterface
 
 import com.example.movieapp.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,6 +28,20 @@ object HiltModules {
         ).build().create(MovieInterface::class.java)
     }
 
+
+//    @Provides
+//    @Singleton
+//    fun provideFavMovieDatabase(
+//        @ApplicationContext app:Context
+//    )=Room.databaseBuilder(
+//        app,
+//        FavoriteMovieDatabase::class.java,
+//        "movie_db"
+//    ).build()
+//
+//    @Provides
+//    @Singleton
+//    fun provideFavMovieDao(db: FavoriteMovieDatabase) = db.getFavoriteMovieDao()
 
 
 }

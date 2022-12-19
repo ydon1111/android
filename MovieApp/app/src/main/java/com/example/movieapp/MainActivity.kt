@@ -1,22 +1,15 @@
 package com.example.movieapp
 
-import android.app.Activity
-import android.content.Context
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.*
-import android.view.inputmethod.InputMethodManager
-import android.widget.PopupMenu
-import android.widget.Toast
-import androidx.appcompat.widget.SearchView
+
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.movieapp.databinding.ActivityMainBinding
-import com.example.movieapp.ui.search.MoviePagingAdapter
-import com.example.movieapp.ui.search.SearchFragment
+
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -31,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentHost) as NavHostFragment
         val navController = navHostFragment.navController
+
         binding.bottomNavigationView.setupWithNavController(
             navController
         )
@@ -41,12 +35,6 @@ class MainActivity : AppCompatActivity() {
             )
         )
         setupActionBarWithNavController(navController, appBarConfig)
-
-
-
-
-
-
     }
 
 

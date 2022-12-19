@@ -16,19 +16,20 @@ import com.example.movieapp.utils.Constants
 
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.movieapp.MovieViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
 import javax.inject.Inject
-
 
 class MoviePaging @Inject constructor(
     val appContext: Context,
     val s: String,
     val movieInterface: MovieInterface,
 ) : PagingSource<Int, Search>() {
-
-
 
     override fun getRefreshKey(state: PagingState<Int, Search>): Int? {
         return state.anchorPosition?.let {
@@ -49,16 +50,16 @@ class MoviePaging @Inject constructor(
                 prevKey = if (page == 1) null else page - 1,
                 nextKey = if (data.body()?.Search?.isEmpty()!!) null else page + 1
             )
+
         } catch (e: Exception) {
 
-            Log.d("MovieData", "영화 데이터 찾을 수 없음")
+//            Log.d("MovieData", "영화 데이터 찾을 수 없음")
             val toast = Toast.makeText(appContext, R.string.nothing_to_display, Toast.LENGTH_LONG)
             toast.show()
-
-            // TODO: "여기에 setNoResultView 들어가야 함"
 
             // Return value
             LoadResult.Error(e)
         }
     }
+
 }

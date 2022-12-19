@@ -7,11 +7,7 @@
     <fragment
         android:id="@+id/searchFragment_nav"
         android:name="com.example.movieapp.ui.search.SearchFragment"
-        tools:layout="@layout/fragment_search" >
-        <action
-            android:id="@+id/action_searchFragment_nav_to_favoritesFragment_nav"
-            app:destination="@id/favoritesFragment_nav" />
-    </fragment>
+        tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/favoritesFragment_nav"
         android:name="com.example.movieapp.ui.favorites.FavoritesFragment"
