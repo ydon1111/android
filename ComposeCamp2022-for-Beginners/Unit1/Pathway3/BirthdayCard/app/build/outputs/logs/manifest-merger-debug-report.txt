@@ -1,0 +1,324 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:17:1-29:12
+MERGED from [androidx.activity:activity-compose:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/6a910d50a263c46340977a3fc78822ed/transformed/activity-compose-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material:material:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/6fd1d813992a48535c2b5d9904aa6446/transformed/material-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.material:material-ripple:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/30ffabc04133add86e33ba4f90ac51da/transformed/material-ripple-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.foundation:foundation:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c3b292888075cd07e8bab7bf5d095c27/transformed/foundation-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.animation:animation:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/02da0dedb06b3776e4603ab48cb07130/transformed/animation-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-tooling-data:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/9564bb9a54a96147e4afcc22a8c1bafe/transformed/ui-tooling-data-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.material:material-icons-core:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/568c43d96d23ab2b0e5e5d2caf53142a/transformed/material-icons-core-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.foundation:foundation-layout:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/36f341bcbcec3e2b2b03a41af818b133/transformed/foundation-layout-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.animation:animation-core:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/f5f0ee68cec415eaec4b4716930e655d/transformed/animation-core-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/0ce3bd200b43cb71dca1bb2d3375f1ce/transformed/ui-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/ddb8a41a9996e66045a640f381ebdf0f/transformed/ui-tooling-preview-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-text:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c9138f33dec9c4337d68193cb52050bd/transformed/ui-text-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.runtime:runtime-saveable:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/e6fa8e169698ba76fa5c19b43a0a9bf0/transformed/runtime-saveable-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-graphics:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/5a48294fd6a68afe229b9498592573ad/transformed/ui-graphics-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-unit:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f0ad29b64fd02c9de5b77d25a32df1e3/transformed/ui-unit-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-geometry:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/29015f67f23bf82c3730e35a9cee5959/transformed/ui-geometry-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.runtime:runtime:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c3129dff040c0237c961e4d02ed76e06/transformed/runtime-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.activity:activity-ktx:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/5db91c46f9367863225f6fa902493fdb/transformed/activity-ktx-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/1c87f155ec3e630ba11a89a9b10d0e74/transformed/lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/bb24a309751f1f2f9a977ee828de43ff/transformed/lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/34ac31d15228fc64b51819cc39c4827f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/9c0631bc43c18122ef35a530ec2e33ad/transformed/core-ktx-1.7.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.5.0] /Users/yeongdon/.gradle/caches/transforms-3/1a010a32568d491965bde88861883d48/transformed/material-1.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/53bd1b5486812e84882983e49cafcdf5/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.ui:ui-util:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/b227341f41b4ba0e44e72a69bb4b7e90/transformed/ui-util-1.2.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/29bf3e9fa0d601a4c392ce55bdf0ed0c/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/yeongdon/.gradle/caches/transforms-3/98843c763ee8d0c725dfe83032383b30/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/56a73931685f2463c57ad7de54b90e8d/transformed/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ed20a1c0a52ada3f7a2b070507a12f9f/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/437afcc14dc48d54bc1d89d5a9a9483e/transformed/activity-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/98daacb03c3338e0f97e40da5e3ac651/transformed/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/531c16a5f471407cae94ee873709e2f0/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ade8d8b117694f2701883f1da7f33f99/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/58b3b2d8ef015b4b20a229927502328c/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/62f04729cf739c686f25485723d0e2c3/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/587dc8319918634fd706c47cbae3e4a8/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/4f5df07a5711f257230865684001faba/transformed/appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ac290328370ec6dad6e9cc605780aedd/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/3f3c24f4f57bcd556c26d9fd2f44bc2e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/8808998185056fbef227139307d71ba7/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/dd0bcec97340c59595d53407eb236cef/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/cc7e0e4d2fd8698252493f7d2a1602c2/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/063b85c09c8efced63aad54218d34f48/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/8cc7c81087131e87adeffeaab729fd55/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/325d48f975dfe951ec912543b08d839f/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/5e5a0011c2980c1b1553f0ad9b9e4c75/transformed/core-1.7.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/eddbc786f6217cdcfe812e52025bb857/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:17:1-50:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/b54d8d564b6f95939f4a295a59c15481/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/28573257e6d500ce7f77f3964dcfcb7d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/yeongdon/.gradle/caches/transforms-3/3294778e9f86c5995af22cd74341e096/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/efba9ab37e41226eac0c9f6e9468a425/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/yeongdon/.gradle/caches/transforms-3/2fd51bf2c019f5031c2c01cc84cb6c66/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/e51087a064202aa993a7e794da72345c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/bac9fb594706a60b9fc58577fdf5ee1f/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/2c488f3048f65933df644dbfe75df92e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/f42877a990f076b88f03370462004c1a/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/eb43a9702a574eb3fe9e3f55de9acd63/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/79762de70fe0f4be256fd2dadaa9c7db/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/15b923f7e64e8a3896405b421bf086af/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/9a8254d42a6f00bc23b774f37a356a8e/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+	package
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:1-40:12
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:18:11-69
+application
+ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:20:5-38:19
+MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:23:5-27:19
+MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.material:material:1.5.0] /Users/yeongdon/.gradle/caches/transforms-3/1a010a32568d491965bde88861883d48/transformed/material-1.5.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.5.0] /Users/yeongdon/.gradle/caches/transforms-3/1a010a32568d491965bde88861883d48/transformed/material-1.5.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/yeongdon/.gradle/caches/transforms-3/98843c763ee8d0c725dfe83032383b30/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/yeongdon/.gradle/caches/transforms-3/98843c763ee8d0c725dfe83032383b30/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/5e5a0011c2980c1b1553f0ad9b9e4c75/transformed/core-1.7.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/5e5a0011c2980c1b1553f0ad9b9e4c75/transformed/core-1.7.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:24:5-48:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:24:5-48:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/28573257e6d500ce7f77f3964dcfcb7d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/28573257e6d500ce7f77f3964dcfcb7d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/5e5a0011c2980c1b1553f0ad9b9e4c75/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:25:9-35
+	android:label
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:23:9-41
+	android:roundIcon
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:24:9-54
+	android:icon
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:22:9-43
+	android:allowBackup
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:21:9-35
+	android:theme
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:26:9-51
+activity#com.example.happybirthday.MainActivity
+ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:27:9-37:20
+	android:label
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:30:13-45
+	android:exported
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:29:13-36
+	android:theme
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:31:13-55
+	android:name
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:28:13-66
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:32:13-36:29
+action#android.intent.action.MAIN
+ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:33:17-69
+	android:name
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:33:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml:35:27-74
+uses-sdk
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.activity:activity-compose:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/6a910d50a263c46340977a3fc78822ed/transformed/activity-compose-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-compose:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/6a910d50a263c46340977a3fc78822ed/transformed/activity-compose-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material:material:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/6fd1d813992a48535c2b5d9904aa6446/transformed/material-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.material:material:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/6fd1d813992a48535c2b5d9904aa6446/transformed/material-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.material:material-ripple:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/30ffabc04133add86e33ba4f90ac51da/transformed/material-ripple-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.material:material-ripple:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/30ffabc04133add86e33ba4f90ac51da/transformed/material-ripple-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.foundation:foundation:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c3b292888075cd07e8bab7bf5d095c27/transformed/foundation-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.foundation:foundation:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c3b292888075cd07e8bab7bf5d095c27/transformed/foundation-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.animation:animation:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/02da0dedb06b3776e4603ab48cb07130/transformed/animation-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/02da0dedb06b3776e4603ab48cb07130/transformed/animation-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-tooling-data:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/9564bb9a54a96147e4afcc22a8c1bafe/transformed/ui-tooling-data-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-tooling-data:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/9564bb9a54a96147e4afcc22a8c1bafe/transformed/ui-tooling-data-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.material:material-icons-core:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/568c43d96d23ab2b0e5e5d2caf53142a/transformed/material-icons-core-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.material:material-icons-core:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/568c43d96d23ab2b0e5e5d2caf53142a/transformed/material-icons-core-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.foundation:foundation-layout:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/36f341bcbcec3e2b2b03a41af818b133/transformed/foundation-layout-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.foundation:foundation-layout:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/36f341bcbcec3e2b2b03a41af818b133/transformed/foundation-layout-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.animation:animation-core:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/f5f0ee68cec415eaec4b4716930e655d/transformed/animation-core-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/f5f0ee68cec415eaec4b4716930e655d/transformed/animation-core-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/0ce3bd200b43cb71dca1bb2d3375f1ce/transformed/ui-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/0ce3bd200b43cb71dca1bb2d3375f1ce/transformed/ui-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/ddb8a41a9996e66045a640f381ebdf0f/transformed/ui-tooling-preview-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/ddb8a41a9996e66045a640f381ebdf0f/transformed/ui-tooling-preview-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-text:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c9138f33dec9c4337d68193cb52050bd/transformed/ui-text-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-text:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c9138f33dec9c4337d68193cb52050bd/transformed/ui-text-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.runtime:runtime-saveable:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/e6fa8e169698ba76fa5c19b43a0a9bf0/transformed/runtime-saveable-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.runtime:runtime-saveable:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/e6fa8e169698ba76fa5c19b43a0a9bf0/transformed/runtime-saveable-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-graphics:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/5a48294fd6a68afe229b9498592573ad/transformed/ui-graphics-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-graphics:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/5a48294fd6a68afe229b9498592573ad/transformed/ui-graphics-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-unit:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f0ad29b64fd02c9de5b77d25a32df1e3/transformed/ui-unit-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-unit:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f0ad29b64fd02c9de5b77d25a32df1e3/transformed/ui-unit-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-geometry:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/29015f67f23bf82c3730e35a9cee5959/transformed/ui-geometry-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-geometry:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/29015f67f23bf82c3730e35a9cee5959/transformed/ui-geometry-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.runtime:runtime:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c3129dff040c0237c961e4d02ed76e06/transformed/runtime-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.runtime:runtime:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/c3129dff040c0237c961e4d02ed76e06/transformed/runtime-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.activity:activity-ktx:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/5db91c46f9367863225f6fa902493fdb/transformed/activity-ktx-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/5db91c46f9367863225f6fa902493fdb/transformed/activity-ktx-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/1c87f155ec3e630ba11a89a9b10d0e74/transformed/lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/1c87f155ec3e630ba11a89a9b10d0e74/transformed/lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/bb24a309751f1f2f9a977ee828de43ff/transformed/lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/bb24a309751f1f2f9a977ee828de43ff/transformed/lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/34ac31d15228fc64b51819cc39c4827f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/34ac31d15228fc64b51819cc39c4827f/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/9c0631bc43c18122ef35a530ec2e33ad/transformed/core-ktx-1.7.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/9c0631bc43c18122ef35a530ec2e33ad/transformed/core-ktx-1.7.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.5.0] /Users/yeongdon/.gradle/caches/transforms-3/1a010a32568d491965bde88861883d48/transformed/material-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.5.0] /Users/yeongdon/.gradle/caches/transforms-3/1a010a32568d491965bde88861883d48/transformed/material-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/53bd1b5486812e84882983e49cafcdf5/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/53bd1b5486812e84882983e49cafcdf5/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.ui:ui-util:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/b227341f41b4ba0e44e72a69bb4b7e90/transformed/ui-util-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.compose.ui:ui-util:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/b227341f41b4ba0e44e72a69bb4b7e90/transformed/ui-util-1.2.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/29bf3e9fa0d601a4c392ce55bdf0ed0c/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/29bf3e9fa0d601a4c392ce55bdf0ed0c/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/yeongdon/.gradle/caches/transforms-3/98843c763ee8d0c725dfe83032383b30/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/yeongdon/.gradle/caches/transforms-3/98843c763ee8d0c725dfe83032383b30/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/56a73931685f2463c57ad7de54b90e8d/transformed/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/56a73931685f2463c57ad7de54b90e8d/transformed/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ed20a1c0a52ada3f7a2b070507a12f9f/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ed20a1c0a52ada3f7a2b070507a12f9f/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/437afcc14dc48d54bc1d89d5a9a9483e/transformed/activity-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.4.0] /Users/yeongdon/.gradle/caches/transforms-3/437afcc14dc48d54bc1d89d5a9a9483e/transformed/activity-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/98daacb03c3338e0f97e40da5e3ac651/transformed/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/98daacb03c3338e0f97e40da5e3ac651/transformed/lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/531c16a5f471407cae94ee873709e2f0/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/531c16a5f471407cae94ee873709e2f0/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ade8d8b117694f2701883f1da7f33f99/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ade8d8b117694f2701883f1da7f33f99/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/58b3b2d8ef015b4b20a229927502328c/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/58b3b2d8ef015b4b20a229927502328c/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/62f04729cf739c686f25485723d0e2c3/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/62f04729cf739c686f25485723d0e2c3/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/587dc8319918634fd706c47cbae3e4a8/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/587dc8319918634fd706c47cbae3e4a8/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/4f5df07a5711f257230865684001faba/transformed/appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/4f5df07a5711f257230865684001faba/transformed/appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ac290328370ec6dad6e9cc605780aedd/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/ac290328370ec6dad6e9cc605780aedd/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/3f3c24f4f57bcd556c26d9fd2f44bc2e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/3f3c24f4f57bcd556c26d9fd2f44bc2e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/8808998185056fbef227139307d71ba7/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/8808998185056fbef227139307d71ba7/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/dd0bcec97340c59595d53407eb236cef/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/dd0bcec97340c59595d53407eb236cef/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/cc7e0e4d2fd8698252493f7d2a1602c2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/cc7e0e4d2fd8698252493f7d2a1602c2/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/063b85c09c8efced63aad54218d34f48/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/063b85c09c8efced63aad54218d34f48/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/8cc7c81087131e87adeffeaab729fd55/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/8cc7c81087131e87adeffeaab729fd55/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/325d48f975dfe951ec912543b08d839f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/325d48f975dfe951ec912543b08d839f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/5e5a0011c2980c1b1553f0ad9b9e4c75/transformed/core-1.7.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] /Users/yeongdon/.gradle/caches/transforms-3/5e5a0011c2980c1b1553f0ad9b9e4c75/transformed/core-1.7.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/eddbc786f6217cdcfe812e52025bb857/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/eddbc786f6217cdcfe812e52025bb857/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:21:5-22:38
+MERGED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:21:5-22:38
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/b54d8d564b6f95939f4a295a59c15481/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/b54d8d564b6f95939f4a295a59c15481/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/28573257e6d500ce7f77f3964dcfcb7d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/28573257e6d500ce7f77f3964dcfcb7d/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/yeongdon/.gradle/caches/transforms-3/3294778e9f86c5995af22cd74341e096/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/yeongdon/.gradle/caches/transforms-3/3294778e9f86c5995af22cd74341e096/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/efba9ab37e41226eac0c9f6e9468a425/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/efba9ab37e41226eac0c9f6e9468a425/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/yeongdon/.gradle/caches/transforms-3/2fd51bf2c019f5031c2c01cc84cb6c66/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/yeongdon/.gradle/caches/transforms-3/2fd51bf2c019f5031c2c01cc84cb6c66/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/e51087a064202aa993a7e794da72345c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/e51087a064202aa993a7e794da72345c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/bac9fb594706a60b9fc58577fdf5ee1f/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/bac9fb594706a60b9fc58577fdf5ee1f/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/2c488f3048f65933df644dbfe75df92e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/2c488f3048f65933df644dbfe75df92e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/f42877a990f076b88f03370462004c1a/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/f42877a990f076b88f03370462004c1a/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/eb43a9702a574eb3fe9e3f55de9acd63/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/yeongdon/.gradle/caches/transforms-3/eb43a9702a574eb3fe9e3f55de9acd63/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/79762de70fe0f4be256fd2dadaa9c7db/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/79762de70fe0f4be256fd2dadaa9c7db/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/15b923f7e64e8a3896405b421bf086af/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/yeongdon/.gradle/caches/transforms-3/15b923f7e64e8a3896405b421bf086af/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/9a8254d42a6f00bc23b774f37a356a8e/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/yeongdon/.gradle/caches/transforms-3/9a8254d42a6f00bc23b774f37a356a8e/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/yeongdon/Desktop/workspace/ComposeCamp2022-for-Beginners/Unit1/Pathway3/BirthdayCard/app/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:24:9-26:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:26:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/1615409a3393689835d06c21d249159f/transformed/ui-tooling-1.2.0/AndroidManifest.xml:25:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:25:9-33:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/yeongdon/.gradle/caches/transforms-3/d8ac69bd872c7628e0527d86181274ae/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:29:13-31
+	android:authorities
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:27:13-68
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:26:13-67
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:30:13-32:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:32:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:31:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:35:9-47:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:38:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:40:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:37:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:36:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:41:13-43:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:42:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:42:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:44:13-46:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:45:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.2.0] /Users/yeongdon/.gradle/caches/transforms-3/f249c12c7101b5fe87ee554c6874de02/transformed/profileinstaller-1.2.0/AndroidManifest.xml:45:25-82
