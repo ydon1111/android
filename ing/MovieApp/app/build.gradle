@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
     buildToolsVersion "30.0.0"
 
     dataBinding{
@@ -23,10 +23,11 @@ android {
     defaultConfig {
         applicationId "com.example.movieapp"
         minSdkVersion 20
-        targetSdkVersion 30
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
 
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -94,7 +95,7 @@ dependencies {
 
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
-    // annotationProcessor "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
+    //noinspection LifecycleAnnotationProcessorWithJava8,LifecycleAnnotationProcessorWithJava8
     kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
 
     // Room m1 error
