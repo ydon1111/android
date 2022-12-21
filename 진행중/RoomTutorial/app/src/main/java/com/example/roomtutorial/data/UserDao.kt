@@ -17,8 +17,4 @@ interface UserDao {
     fun readAllData(): LiveData<List<User>>
 
 
-
-
-
-
 }
