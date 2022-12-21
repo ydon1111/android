@@ -1,6 +1,5 @@
-package com.example.roomtutorial.fragment.add
+package com.example.roomtutorial.fragments.add
 
-import android.icu.number.IntegerWidth
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -12,8 +11,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.roomtutorial.R
-import com.example.roomtutorial.data.User
-import com.example.roomtutorial.data.UserViewModel
+import com.example.roomtutorial.model.User
+import com.example.roomtutorial.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 

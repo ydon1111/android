@@ -1,4 +1,4 @@
-package com.example.roomtutorial.fragment.list
+package com.example.roomtutorial.fragments.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomtutorial.R
-import com.example.roomtutorial.data.UserViewModel
+import com.example.roomtutorial.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 
