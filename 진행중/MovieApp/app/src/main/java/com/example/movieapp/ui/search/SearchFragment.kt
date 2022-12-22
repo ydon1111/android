@@ -52,9 +52,7 @@ class SearchFragment @Inject constructor() : Fragment() {
         }
 
 
-
         setRecyclerView()
-
     }
 
 

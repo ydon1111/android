@@ -39,7 +39,6 @@ class MoviePagingAdapter @Inject constructor(private val viewModel: MovieViewMod
 
         val data = getItem(position)
 
-
         var _isChecked = false
         CoroutineScope(Dispatchers.IO).launch {
             val count = viewModel.checkMovie(data?.imdbID!!)
