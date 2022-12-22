@@ -1,12 +1,11 @@
 package com.example.roomtutorial.fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -42,6 +41,9 @@ class UpdateFragment : Fragment() {
             updateItem()
         }
 
+        // Add menu
+        setHasOptionsMenu(true)
+
         return view
     }
 
@@ -58,12 +60,43 @@ class UpdateFragment : Fragment() {
             Toast.makeText(requireContext(), "변경 완료", Toast.LENGTH_LONG).show()
             // Navigate Back
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
-        }else{
+        } else {
             Toast.makeText(requireContext(), "변경 실패", Toast.LENGTH_LONG).show()
         }
     }
 
     private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
         return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == R.id.menu_delete) {
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("네") { _, _ ->
+            mUserViewModel.deleteUser(args.currentUser)
+            Toast.makeText(
+                requireContext(),
+                "${args.currentUser.firstName} 삭제 하였습니다.",
+                Toast.LENGTH_SHORT
+            ).show()
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+
+        }
+        builder.setNegativeButton("아니요") { _, _ -> }
+        builder.setTitle("${args.currentUser.firstName}를 삭제하시겠습니까?")
+        builder.setMessage("${args.currentUser.firstName}를 정말 삭제하시겠습니까? ")
+        builder.create().show()
+
     }
 }
