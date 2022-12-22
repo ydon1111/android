@@ -7,7 +7,7 @@
 
 ## 개발 환경
 
-1. kotlin,Firebase
+1. kotlin
 2. targetSdkVersion 32, minSdkVersion 21
 
 ## 기본구현
