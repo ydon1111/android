@@ -29,6 +29,8 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>(){
         holder.itemView.lastName_txt.text = currentItem.lastName
         holder.itemView.age_txt.text = currentItem.age.toString()
 
+
+
         holder.itemView.rowLayout.setOnClickListener {
             val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
             holder.itemView.findNavController().navigate(action)
