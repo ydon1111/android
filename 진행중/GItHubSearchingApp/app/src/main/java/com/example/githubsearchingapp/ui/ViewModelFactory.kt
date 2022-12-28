@@ -17,10 +17,10 @@ class ViewModelFactory(
         modelClass: Class<T>,
         handle: SavedStateHandle
     ): T {
-        if (modelClass.isAssignableFrom(SearchRepositoriesViewModel::class.java)){
+        if (modelClass.isAssignableFrom(SearchRepositoriesViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return SearchRepositoriesViewModel(repository,handle) as T
+            return SearchRepositoriesViewModel(repository, handle) as T
         }
-        throw IllegalAccessException("Unknown ViewModel class")
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

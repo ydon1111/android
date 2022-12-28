@@ -27,6 +27,7 @@ class SearchRepositoriesActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this, Injection.provideViewModelFactory(owner = this))
             .get(SearchRepositoriesViewModel::class.java)
 
+
         val decoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         binding.list.addItemDecoration(decoration)
 
@@ -43,8 +44,10 @@ class SearchRepositoriesActivity : AppCompatActivity() {
         uiActions: (UiAction) -> Unit
     ) {
         val repoAdapter = ReposAdapter()
-        list.adapter = repoAdapter
-
+        list.adapter = repoAdapter.withLoadStateHeaderAndFooter(
+            header = ReposLoadStateAdapter { repoAdapter.retry() },
+            footer = ReposLoadStateAdapter { repoAdapter.retry() }
+        )
         bindSearch(
             uiState = uiState,
             onQueryChanged = uiActions

@@ -7,21 +7,34 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.githubsearchingapp.data.GithubRepository
 import com.example.githubsearchingapp.model.Repo
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 
 
 import kotlinx.coroutines.launch
 import retrofit2.http.Query
 
+
+/**
+ * ViewModel for the [SearchRepositoriesActivity] screen.
+ * The ViewModel works with the [GithubRepository] to get the data.
+ */
+@OptIn(ExperimentalCoroutinesApi::class)
 class SearchRepositoriesViewModel(
     private val repository: GithubRepository,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
+    /**
+     * Stream of immutable states representative of the UI.
+     */
     val state: StateFlow<UiState>
+
     val pagingDataFlow: Flow<PagingData<Repo>>
 
-
+    /**
+     * Processor of side effects from the UI which in turn feedback into [state]
+     */
     val accept: (UiAction) -> Unit
 
     init {
@@ -35,6 +48,8 @@ class SearchRepositoriesViewModel(
         val queriesScrolled = actionStateFlow
             .filterIsInstance<UiAction.Scroll>()
             .distinctUntilChanged()
+            // This is shared to keep the flow "hot" while caching the last query scrolled,
+            // otherwise each flatMapLatest invocation would lose the last query scrolled,
             .shareIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5000),
@@ -54,7 +69,7 @@ class SearchRepositoriesViewModel(
             UiState(
                 query = search.query,
                 lastQueryScrolled = scroll.currentQuery,
-
+                // If the search query matches the scroll query, the user has scrolled
                 hasNotScrolledForCurrentSearch = search.query != scroll.currentQuery
             )
         }
@@ -75,13 +90,14 @@ class SearchRepositoriesViewModel(
         super.onCleared()
     }
 
+
     private fun searchRepo(queryString: String): Flow<PagingData<Repo>> =
         repository.getSearchResultStream(queryString)
 }
 
-sealed class UiAction{
-    data class Search(val query: String): UiAction()
-    data class Scroll(val currentQuery: String): UiAction()
+sealed class UiAction {
+    data class Search(val query: String) : UiAction()
+    data class Scroll(val currentQuery: String) : UiAction()
 }
 
 data class UiState(
