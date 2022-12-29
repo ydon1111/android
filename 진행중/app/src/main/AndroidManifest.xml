@@ -15,7 +15,7 @@
         <activity
             android:name=".AddHappyPlaceActivity"
             android:screenOrientation="portrait"
-            android:label="좋아하는장소저장앱"
+            android:label="좋아하는장소저장"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

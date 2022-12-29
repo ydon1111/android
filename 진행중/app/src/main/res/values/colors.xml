@@ -12,6 +12,10 @@
     <color name="my_themes_color2">#FEBE8C</color>
     <color name="my_themes_color3">#FFFBC1</color>
     <color name="my_themes_color4">#B6E2A1</color>
+    <color name="secondary_text_color">#9AA2AF</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="colorAccent">#adcbe3</color>
+    <color name="button_background_color">#63ace5</color>
 
     <!--    #F7A4A4-->
 <!--    #FEBE8C-->

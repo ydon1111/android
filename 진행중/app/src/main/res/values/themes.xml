@@ -7,6 +7,7 @@
     <style name="CustomToolbarStyle">
         <item name="android:textColorPrimary">#0F0E0E</item>
         <item name="android:colorControlNormal">#0F0E0E</item>
+        <item name="buttonBarButtonStyle">@color/button_background_color</item>
 
     </style>
 
