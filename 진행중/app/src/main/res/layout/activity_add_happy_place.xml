@@ -33,6 +33,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,10 +45,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/edit_text_hint_title"
-                    android:inputType="textCapWords"
+                    android:inputType="textCapSentences"
                     android:textColor="@color/my_themes_color1"
                     android:textColorHint="@color/my_themes_color1"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/edit_text_text_size" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,6 +71,7 @@
                     android:textColor="@color/my_themes_color1"
                     android:textColorHint="@color/my_themes_color1"
                     android:textSize="@dimen/edit_text_text_size" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -88,6 +90,8 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/edit_text_hint_date"
                     android:inputType="text"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:textColor="@color/my_themes_color1"
                     android:textColorHint="@color/my_themes_color1"
                     android:textSize="@dimen/edit_text_text_size" />
@@ -126,7 +130,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/til_location" />
+                app:layout_constraintTop_toBottomOf="@+id/til_location"
+                />
 
             <TextView
                 android:id="@+id/tv_add_image"
@@ -161,7 +166,8 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_place_image"/>
+                app:layout_constraintTop_toBottomOf="@+id/iv_place_image"
+                />
 
 
 
