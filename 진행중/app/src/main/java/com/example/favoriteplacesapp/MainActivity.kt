@@ -7,6 +7,11 @@ import com.example.favoriteplacesapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        private const val CAMERA_PERMISSION_CODE = 1
+        private const val CAMERA_REQUEST_CODE = 2
+    }
+
 private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

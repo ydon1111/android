@@ -1,13 +1,18 @@
 package com.example.favoriteplacesapp
 
 import android.Manifest
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.ActivityNotFoundException
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import android.webkit.PermissionRequest
 import android.widget.Toast
@@ -17,10 +22,12 @@ import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
 
+@Suppress("DEPRECATION")
 class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityAddHappyPlaceBinding
@@ -41,7 +48,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
             onBackPressed()
         }
 
-//        binding.btnSave.se
+
 
         dataSetListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             cal.set(Calendar.YEAR, year)
@@ -71,9 +78,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                 pictureDialog.setItems(pictureDialogItems) { _, which ->
                     when (which) {
                         0 -> choosePhotoFromGallery()
-                        1
-                        -> Toast.makeText(this@AddHappyPlaceActivity, "카메라 선택", Toast.LENGTH_LONG)
-                            .show()
+                        1 -> takePhotoFromCamera()
                     }
                 }
                 pictureDialog.show()
@@ -81,29 +86,87 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun choosePhotoFromGallery() {
-        Dexter.withActivity(this).withPermissions(
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-        ).withListener(object : MultiplePermissionsListener {
-            override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
-                if (report!!.areAllPermissionsGranted()) {
-                    Toast.makeText(
-                        this@AddHappyPlaceActivity,
-                        "저장공간 읽기/쓰기 권한이 승인되었습니다.갤러리 이미지 사용가능합니다.",
-                        Toast.LENGTH_LONG
-                    ).show()
+
+    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == GALLERY) {
+                Log.d("여기까지 오냐", "여기까지오는거맞냐")
+                println(resultCode)
+                if (data != null) {
+                    println(data)
+                    val contentURI = data.data
+                    try {
+                        @Suppress("DEPRECATION")
+                        val selectedImageBitmap =
+                            MediaStore.Images.Media.getBitmap(this.contentResolver, contentURI)
+                        binding.ivPlaceImage.setImageBitmap(selectedImageBitmap)
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                        Toast.makeText(
+                            this@AddHappyPlaceActivity, "이미지 불러오기 실패", Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-
+            }else if(requestCode == CAMERA){
+                val thumbnail : Bitmap = data!!.extras!!.get("data") as Bitmap
+                binding.ivPlaceImage.setImageBitmap(thumbnail)
             }
+        }
+    }
 
-            override fun onPermissionRationaleShouldBeShown(
-                permissions: MutableList<com.karumi.dexter.listener.PermissionRequest>?,
-                token: PermissionToken?
-            ) {
-                showRationalDialogForPermissions()
-            }
-        }).onSameThread().check()
+    private fun takePhotoFromCamera() {
+        Dexter.withActivity(this)
+            .withPermissions(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA
+            )
+            .withListener(object : MultiplePermissionsListener {
+                override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
+                    if (report!!.areAllPermissionsGranted()) {
+                        val galleryIntent =
+                            Intent(
+                                MediaStore.ACTION_IMAGE_CAPTURE
+                            )
+                        startActivityForResult(galleryIntent, CAMERA)
+                    }
+                }
+                override fun onPermissionRationaleShouldBeShown(
+                    permissions: MutableList<com.karumi.dexter.listener.PermissionRequest>?,
+                    token: PermissionToken?
+                ) {
+                    showRationalDialogForPermissions()
+                }
+            }).onSameThread().check()
+
+    }
+
+
+    private fun choosePhotoFromGallery() {
+        Dexter.withActivity(this)
+            .withPermissions(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+            .withListener(object : MultiplePermissionsListener {
+                override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
+                    if (report!!.areAllPermissionsGranted()) {
+                        val galleryIntent =
+                            Intent(
+                                Intent.ACTION_PICK,
+                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                            )
+                        startActivityForResult(galleryIntent, GALLERY)
+                    }
+                }
+                override fun onPermissionRationaleShouldBeShown(
+                    permissions: MutableList<com.karumi.dexter.listener.PermissionRequest>?,
+                    token: PermissionToken?
+                ) {
+                    showRationalDialogForPermissions()
+                }
+            }).onSameThread().check()
     }
 
     private fun showRationalDialogForPermissions() {
@@ -126,5 +189,10 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         val myFormat = "yyyy.MM.dd"
         val sdf = SimpleDateFormat(myFormat, Locale.getDefault())
         binding.etDate.setText(sdf.format(cal.time).toString())
+    }
+
+    companion object {
+        private const val GALLERY = 1
+        private const val CAMERA = 2
     }
 }
