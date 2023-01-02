@@ -1,6 +1,7 @@
 package com.example.favoriteplacesapp.activities
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -9,18 +10,24 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
+import android.location.Location
+import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
+import android.os.Looper
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.webkit.PermissionRequest
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.favoriteplacesapp.R
 import com.example.favoriteplacesapp.database.DatabaseHandler
 import com.example.favoriteplacesapp.databinding.ActivityAddFavoritePlaceBinding
 import com.example.favoriteplacesapp.models.FavoritePlaceModel
+import com.example.favoriteplacesapp.utils.GetAddressFromLatLng
+import com.google.android.gms.location.*
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
@@ -50,6 +57,8 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFavoritePlaceDetails: FavoritePlaceModel? = null
 
+    private lateinit var mFusedLocationClient: FusedLocationProviderClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -62,6 +71,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         binding.toolbarAddPlace.setNavigationOnClickListener {
             onBackPressed()
         }
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         if (!Places.isInitialized()) {
             Places.initialize(
@@ -108,7 +118,56 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         binding.tvAddImage.setOnClickListener(this)
         binding.btnSave.setOnClickListener(this)
         binding.etLocation.setOnClickListener(this)
+        binding.tvSelectCurrentLocation.setOnClickListener(this)
     }
+
+    private fun isLocationEnable(): Boolean {
+        val locationManager: LocationManager = getSystemService(Context.LOCATION_SERVICE)
+                as LocationManager
+
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+                || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+    }
+
+
+    @SuppressLint("MissingPermission")
+    private fun requestNewLocationData() {
+
+        val mLocationRequest = LocationRequest()
+        mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        mLocationRequest.interval = 0
+        mLocationRequest.fastestInterval = 0
+        mLocationRequest.numUpdates = 1
+
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        mFusedLocationClient.requestLocationUpdates(
+            mLocationRequest, mLocationCallback,
+            Looper.myLooper()
+        )
+    }
+
+    private val mLocationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            val mLastLocation: Location? = locationResult.lastLocation
+            mLatitude = mLastLocation!!.latitude
+            Log.i("현재 위도", "$mLatitude")
+            mLongitude = mLastLocation.longitude
+            Log.i("현재 경도", "$mLongitude")
+
+            val addressTask =
+                GetAddressFromLatLng(this@AddHappyPlaceActivity, mLatitude, mLongitude)
+            addressTask.setAddressListener(object : GetAddressFromLatLng.AddressListener{
+                override fun onAddressFound(address:String?){
+                    binding.etLocation.setText(address)
+                }
+                override fun onError(){
+                    Log.e("Get Address::","오류발생@@@")
+                }
+            })
+            addressTask.getAddress()
+        }
+    }
+
 
     override fun onClick(v: View?) {
         when (v!!.id) {
@@ -177,7 +236,6 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                     }
                 }
             }
-
             R.id.et_location -> {
                 try {
                     val fields = listOf(
@@ -191,6 +249,38 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
 
                 } catch (e: Exception) {
                     e.printStackTrace()
+                }
+            }
+            R.id.tv_select_current_location -> {
+                if (!isLocationEnable()) {
+                    Toast.makeText(
+                        this,
+                        "위치정보 제공이 꺼져있습니다. 위치정보 제공을 켜주세요.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+                    startActivity(intent)
+                } else {
+                    Dexter.withActivity(this).withPermissions(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ).withListener(object : MultiplePermissionsListener {
+                        override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
+                            if (report!!.areAllPermissionsGranted()) {
+
+                                requestNewLocationData()
+                            }
+                        }
+
+                        override fun onPermissionRationaleShouldBeShown(
+                            permissions: MutableList<com.karumi.dexter.listener.PermissionRequest>?,
+                            token: PermissionToken?
+                        ) {
+                            showRationalDialogForPermissions()
+                        }
+                    }).onSameThread()
+                        .check()
                 }
             }
         }
