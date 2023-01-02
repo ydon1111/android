@@ -73,7 +73,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         when (v!!.id) {
             R.id.et_date -> {
                 DatePickerDialog(
-                    this@AddHappyPlaceActivity,
+                    this,
                     dataSetListener,
                     cal.get(Calendar.YEAR),
                     cal.get(Calendar.MONTH),
@@ -93,7 +93,6 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                 pictureDialog.show()
             }
             R.id.btn_save -> {
-
                 when {
                     binding.etTitle.text.isNullOrEmpty() -> {
                         Toast.makeText(this, "방문장소를 입력하세요", Toast.LENGTH_SHORT).show()
@@ -123,11 +122,7 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                         val addFavoritePlace = dbHandler.addFavoritePlace(favoritePlaceModel)
 
                         if (addFavoritePlace > 0) {
-                            Toast.makeText(
-                                this,
-                                "추억의 장소가 저장되었습니다.",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            setResult(Activity.RESULT_OK)
                             finish()
                         }
                     }
