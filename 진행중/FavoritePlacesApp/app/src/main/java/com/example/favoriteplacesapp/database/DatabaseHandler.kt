@@ -13,23 +13,23 @@ class DatabaseHandler(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
 
-        companion object{
-            private const val DATABASE_VERSION = 1
-            private const val DATABASE_NAME = "FavoritePlacesDatabase"
-            private const val TABLE_FAVORITE_PLACE = "FavoriteTable"
+    companion object {
+        private const val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "FavoritePlacesDatabase"
+        private const val TABLE_FAVORITE_PLACE = "FavoriteTable"
 
-            private const val KEY_ID = "_id"
-            private const val KEY_TITLE = "title"
-            private const val KEY_IMAGE = "image"
-            private const val KEY_DESCRIPTION = "description"
-            private const val KEY_DATE = "date"
-            private const val KEY_LOCATION = "location"
-            private const val KEY_LATITUDE = "latitude"
-            private const val KEY_LONGITUDE = "longitude"
-        }
+        private const val KEY_ID = "_id"
+        private const val KEY_TITLE = "title"
+        private const val KEY_IMAGE = "image"
+        private const val KEY_DESCRIPTION = "description"
+        private const val KEY_DATE = "date"
+        private const val KEY_LOCATION = "location"
+        private const val KEY_LATITUDE = "latitude"
+        private const val KEY_LONGITUDE = "longitude"
+    }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val CREATE_FAVORITE_PLACE_TABLE = ("CREATE TABLE "+ TABLE_FAVORITE_PLACE +"("
+        val CREATE_FAVORITE_PLACE_TABLE = ("CREATE TABLE " + TABLE_FAVORITE_PLACE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY,"
                 + KEY_TITLE + " TEXT,"
                 + KEY_IMAGE + " TEXT,"
@@ -46,39 +46,79 @@ class DatabaseHandler(context: Context) :
         onCreate(db)
     }
 
-    fun addFavoritePlace(favoritePlace: FavoritePlaceModel): Long{
+    fun addFavoritePlace(favoritePlace: FavoritePlaceModel): Long {
         val db = this.writableDatabase
 
         val contentValue = ContentValues()
-        contentValue.put(KEY_TITLE,favoritePlace.title)
-        contentValue.put(KEY_IMAGE,favoritePlace.image)
+        contentValue.put(KEY_TITLE, favoritePlace.title)
+        contentValue.put(KEY_IMAGE, favoritePlace.image)
         contentValue.put(
             KEY_DESCRIPTION,
             favoritePlace.description
         )
-        contentValue.put(KEY_DATE,favoritePlace.date)
-        contentValue.put(KEY_LOCATION,favoritePlace.location)
-        contentValue.put(KEY_LATITUDE,favoritePlace.latitude)
-        contentValue.put(KEY_LONGITUDE,favoritePlace.longitude)
+        contentValue.put(KEY_DATE, favoritePlace.date)
+        contentValue.put(KEY_LOCATION, favoritePlace.location)
+        contentValue.put(KEY_LATITUDE, favoritePlace.latitude)
+        contentValue.put(KEY_LONGITUDE, favoritePlace.longitude)
 
 
-        val result = db.insert(TABLE_FAVORITE_PLACE,null,contentValue)
+        val result = db.insert(TABLE_FAVORITE_PLACE, null, contentValue)
 
         db.close()
         return result
     }
 
+    fun updateFavoritePlace(favoritePlace: FavoritePlaceModel): Int {
+        val db = this.writableDatabase
+
+        val contentValue = ContentValues()
+        contentValue.put(KEY_TITLE, favoritePlace.title)
+        contentValue.put(KEY_IMAGE, favoritePlace.image)
+        contentValue.put(
+            KEY_DESCRIPTION,
+            favoritePlace.description
+        )
+        contentValue.put(KEY_DATE, favoritePlace.date)
+        contentValue.put(KEY_LOCATION, favoritePlace.location)
+        contentValue.put(KEY_LATITUDE, favoritePlace.latitude)
+        contentValue.put(KEY_LONGITUDE, favoritePlace.longitude)
+
+
+        val success =
+            db.update(
+                TABLE_FAVORITE_PLACE,
+                contentValue,
+                KEY_ID + "=" + favoritePlace.id,
+                null
+            )
+
+        db.close()
+        return success
+    }
+
+    fun deleteFavoritePlace(favoritePlace: FavoritePlaceModel): Int {
+        val db = this.writableDatabase
+
+        val success = db.delete(
+            TABLE_FAVORITE_PLACE,
+            KEY_ID + "=" + favoritePlace.id,
+            null)
+        db.close()
+        return success
+    }
+
+
     @SuppressLint("Range")
-    fun getFavoritePlacesList(): ArrayList<FavoritePlaceModel>{
-        val favoritePlaceList  = ArrayList<FavoritePlaceModel>()
+    fun getFavoritePlacesList(): ArrayList<FavoritePlaceModel> {
+        val favoritePlaceList = ArrayList<FavoritePlaceModel>()
         val selectQuery = "SELECT * FROM $TABLE_FAVORITE_PLACE"
         val db = this.readableDatabase
 
-        try{
-            val cursor: Cursor = db.rawQuery(selectQuery,null)
+        try {
+            val cursor: Cursor = db.rawQuery(selectQuery, null)
 
-            if(cursor.moveToFirst()){
-                do{
+            if (cursor.moveToFirst()) {
+                do {
                     val place = FavoritePlaceModel(
                         cursor.getInt(cursor.getColumnIndex(KEY_ID)),
                         cursor.getString(cursor.getColumnIndex(KEY_TITLE)),
@@ -92,11 +132,11 @@ class DatabaseHandler(context: Context) :
 
                     favoritePlaceList.add(place)
 
-                }while (cursor.moveToNext())
+                } while (cursor.moveToNext())
             }
 
             cursor.close()
-        }catch(e:SQLiteException){
+        } catch (e: SQLiteException) {
             db.execSQL(selectQuery)
             return ArrayList()
         }

@@ -21,6 +21,10 @@ import com.example.favoriteplacesapp.R
 import com.example.favoriteplacesapp.database.DatabaseHandler
 import com.example.favoriteplacesapp.databinding.ActivityAddFavoritePlaceBinding
 import com.example.favoriteplacesapp.models.FavoritePlaceModel
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.widget.Autocomplete
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -44,6 +48,8 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
     private var mLatitude: Double = 0.0
     private var mLongitude: Double = 0.0
 
+    private var mFavoritePlaceDetails: FavoritePlaceModel? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -57,6 +63,18 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
             onBackPressed()
         }
 
+        if (!Places.isInitialized()) {
+            Places.initialize(
+                this@AddHappyPlaceActivity,
+                resources.getString(R.string.google_api_key)
+            )
+        }
+
+        if (intent.hasExtra(MainActivity.EXTRA_PLACE_DETAILS)) {
+            mFavoritePlaceDetails =
+                intent.getSerializableExtra(MainActivity.EXTRA_PLACE_DETAILS) as FavoritePlaceModel?
+        }
+
         dataSetListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             cal.set(Calendar.YEAR, year)
             cal.set(Calendar.MONTH, month)
@@ -64,9 +82,32 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
             updateDateInView()
         }
         updateDateInView()
+
+        if (mFavoritePlaceDetails != null) {
+            supportActionBar?.title = "추억의장소 수정"
+
+            binding.etTitle.setText(mFavoritePlaceDetails!!.title)
+            binding.etDescription.setText(mFavoritePlaceDetails!!.description)
+            binding.etDate.setText(mFavoritePlaceDetails!!.date)
+            binding.etLocation.setText(mFavoritePlaceDetails!!.location)
+            mLatitude = mFavoritePlaceDetails!!.latitude
+            mLongitude = mFavoritePlaceDetails!!.longitude
+
+            saveImageToInternalStorage = Uri.parse(
+                mFavoritePlaceDetails!!.image
+            )
+
+            binding.ivPlaceImage.setImageURI(saveImageToInternalStorage)
+
+            binding.btnSave.text = "수정하기"
+
+
+        }
+
         binding.etDate.setOnClickListener(this)
         binding.tvAddImage.setOnClickListener(this)
         binding.btnSave.setOnClickListener(this)
+        binding.etLocation.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -107,9 +148,8 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                         Toast.makeText(this, "사진을 넣어주세요", Toast.LENGTH_SHORT).show()
                     }
                     else -> {
-
                         val favoritePlaceModel = FavoritePlaceModel(
-                            0,
+                            if (mFavoritePlaceDetails == null) 0 else mFavoritePlaceDetails!!.id,
                             binding.etTitle.text.toString(),
                             saveImageToInternalStorage.toString(),
                             binding.etDescription.text.toString(),
@@ -119,13 +159,38 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                             mLongitude
                         )
                         val dbHandler = DatabaseHandler(this)
-                        val addFavoritePlace = dbHandler.addFavoritePlace(favoritePlaceModel)
 
-                        if (addFavoritePlace > 0) {
-                            setResult(Activity.RESULT_OK)
-                            finish()
+                        if (mFavoritePlaceDetails == null) {
+                            val addFavoritePlace = dbHandler.addFavoritePlace(favoritePlaceModel)
+                            if (addFavoritePlace > 0) {
+                                setResult(Activity.RESULT_OK)
+                                finish()
+                            }
+                        } else {
+                            val updateFavoritePlace =
+                                dbHandler.updateFavoritePlace(favoritePlaceModel)
+                            if (updateFavoritePlace > 0) {
+                                setResult(Activity.RESULT_OK)
+                                finish()
+                            }
                         }
                     }
+                }
+            }
+
+            R.id.et_location -> {
+                try {
+                    val fields = listOf(
+                        Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG,
+                        Place.Field.ADDRESS
+                    )
+                    val intent =
+                        Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields)
+                            .build(this@AddHappyPlaceActivity)
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE)
+
+                } catch (e: Exception) {
+                    e.printStackTrace()
                 }
             }
         }
@@ -159,13 +224,19 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
             } else if (requestCode == CAMERA) {
                 val thumbnail: Bitmap = data!!.extras!!.get("data") as Bitmap
 
-                saveImageToInternalStorage= saveImageToInternalStorage(thumbnail)
+                saveImageToInternalStorage = saveImageToInternalStorage(thumbnail)
                 Log.e("saveImage", "Path:: $saveImageToInternalStorage")
 
                 binding.ivPlaceImage.setImageBitmap(thumbnail)
+            } else if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
+                val place: Place = Autocomplete.getPlaceFromIntent(data!!)
+                binding.etLocation.setText(place.address)
+                mLatitude = place.latLng!!.latitude
+                mLongitude = place.latLng!!.longitude
             }
-        }else if (resultCode == Activity.RESULT_CANCELED){
-            Log.e("취소됨","취소됨")
+
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            Log.e("취소됨", "취소됨")
         }
     }
 
@@ -268,5 +339,6 @@ class AddHappyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         private const val GALLERY = 1
         private const val CAMERA = 2
         private const val IMAGE_DIRECTORY = "추억의 장소들"
+        private const val PLACE_AUTOCOMPLETE_REQUEST_CODE = 3
     }
 }

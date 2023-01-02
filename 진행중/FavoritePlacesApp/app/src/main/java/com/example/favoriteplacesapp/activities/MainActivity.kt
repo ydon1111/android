@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.favoriteplacesapp.adapters.FavoritePlacesAdapter
 import com.example.favoriteplacesapp.database.DatabaseHandler
 import com.example.favoriteplacesapp.databinding.ActivityMainBinding
 import com.example.favoriteplacesapp.models.FavoritePlaceModel
+import com.example.favoriteplacesapp.utils.SwipeToDeleteCallback
+import com.example.favoriteplacesapp.utils.SwipeToEditCallBack
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
@@ -68,10 +72,36 @@ class MainActivity : AppCompatActivity() {
                     this@MainActivity,
                     FavoritePlaceDetailActivity::class.java
                 )
-                intent.putExtra(EXTRA_PLACE_DETAILS,model)
+                intent.putExtra(EXTRA_PLACE_DETAILS, model)
                 startActivity(intent)
             }
         })
+
+        val editSwipeHandler = object : SwipeToEditCallBack(this) {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+
+                val adapter = binding.rvFavoritePlacesList.adapter as FavoritePlacesAdapter
+                adapter.notifyEditItem(
+                    this@MainActivity,
+                    viewHolder.adapterPosition,
+                    ADD_PLACE_ACTIVITY_REQUEST_CODE
+                )
+            }
+        }
+        val editItemTouchHelper = ItemTouchHelper(editSwipeHandler)
+        editItemTouchHelper.attachToRecyclerView(binding.rvFavoritePlacesList)
+
+        val deleteSwipeHandler = object : SwipeToDeleteCallback(this){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val adapter = binding.rvFavoritePlacesList.adapter as FavoritePlacesAdapter
+                adapter.removeAt(viewHolder.adapterPosition)
+
+                getFavoritePlacesListFromLocalDB()
+            }
+        }
+        val deleteItemTouchHelper = ItemTouchHelper(deleteSwipeHandler)
+        deleteItemTouchHelper.attachToRecyclerView(binding.rvFavoritePlacesList)
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

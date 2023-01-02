@@ -1,7 +1,9 @@
 package com.example.favoriteplacesapp.adapters
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +11,9 @@ import android.view.ViewGroup
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.favoriteplacesapp.R
+import com.example.favoriteplacesapp.activities.AddHappyPlaceActivity
+import com.example.favoriteplacesapp.activities.MainActivity
+import com.example.favoriteplacesapp.database.DatabaseHandler
 import com.example.favoriteplacesapp.databinding.ItemFavoritePlaceBinding
 
 import com.example.favoriteplacesapp.models.FavoritePlaceModel
@@ -44,6 +49,23 @@ open class FavoritePlacesAdapter(
                     onClickListener!!.onClick(position,model)
                 }
             }
+    }
+
+    fun notifyEditItem(activity: Activity,position: Int,requestCode: Int){
+        val intent = Intent(context,AddHappyPlaceActivity::class.java)
+        intent.putExtra(MainActivity.EXTRA_PLACE_DETAILS,list[position])
+        activity.startActivityForResult(intent,requestCode)
+        notifyItemChanged(position)
+    }
+
+    fun removeAt(position: Int){
+        val dbHandler = DatabaseHandler(context)
+        val isDeleted = dbHandler.deleteFavoritePlace(list[position])
+        if(isDeleted >0){
+            list.removeAt(position)
+            notifyItemRemoved(position)
+        }
+
     }
 
     override fun getItemCount() = list.size
