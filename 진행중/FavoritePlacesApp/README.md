@@ -1,6 +1,6 @@
 # FavoritePlacesAPP
 
-Googlg map API를 통해 지도에 방문한 장소를 남기고 기록하는 어플 
+Google map API를 통해 지도에 방문한 장소를 남기고 기록하는 어플 
 
 ## 개발 환경
 
