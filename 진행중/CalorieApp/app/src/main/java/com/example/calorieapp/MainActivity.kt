@@ -1,19 +1,15 @@
-package com.example.movieapp
+package com.example.calorieapp
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import android.view.inputmethod.InputBinding
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.movieapp.databinding.ActivityMainBinding
+import com.example.calorieapp.databinding.ActivityMainBinding
 
-import dagger.hilt.android.AndroidEntryPoint
-
-
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +26,11 @@ class MainActivity : AppCompatActivity() {
         )
         val appBarConfig = AppBarConfiguration(
             setOf(
-                R.id.searchFragment_nav,
-                R.id.favoritesFragment_nav
+                R.id.nav_fitness,
+                R.id.nav_food,
+                R.id.nav_home,
+                R.id.nav_my,
+                R.id.nav_statistics
             )
         )
         setupActionBarWithNavController(navController, appBarConfig)
@@ -39,4 +38,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
