@@ -87,8 +87,8 @@ dependencies {
     implementation "androidx.paging:paging-runtime:3.1.1"
     implementation "androidx.paging:paging-rxjava2-ktx:3.1.1"
 
-
-
+    //M1 error
+    kapt "org.xerial:sqlite-jdbc:3.34.0"
 
 
 

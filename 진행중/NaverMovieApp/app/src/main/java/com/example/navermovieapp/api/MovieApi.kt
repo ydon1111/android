@@ -1,6 +1,7 @@
 package com.example.navermovieapp.api
 
-import android.graphics.Movie
+
+import com.example.navermovieapp.model.Movie
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query
