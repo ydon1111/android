@@ -10,6 +10,5 @@ import com.example.navermovieapp.model.Keyword
     version = 3
 )
 abstract class HistoryDatabase : RoomDatabase(){
-
     abstract fun getHistoryDao(): HistoryDao
 }

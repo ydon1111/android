@@ -17,23 +17,24 @@ import java.io.IOException
 class MovieListPagingSource(val movieApi: MovieApi, val searchQuery: String) :
     PagingSource<Int, MovieItem>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MovieItem> {
-        return try{
+        return try {
             val page = params.key ?: 1
             val response = movieApi.getMovieList(
                 NAVER_ID,
                 NAVER_SECRET, searchQuery,
-                PAGE_SIZE,page)
+                PAGE_SIZE, page
+            )
 
-            Log.d("data@@@",page.toString() + " " + response.total)
+            Log.d("data@@@", page.toString() + " " + response.total)
             LoadResult.Page(
                 response.items,
                 prevKey = null,
 
-                nextKey = if(page+ PAGE_SIZE >= response.total) null else page + PAGE_SIZE
+                nextKey = if (page + PAGE_SIZE >= response.total) null else page + PAGE_SIZE
             )
-        } catch ( e: IOException){
+        } catch (e: IOException) {
             return LoadResult.Error(e)
-        } catch (e: HttpException){
+        } catch (e: HttpException) {
             return LoadResult.Error(e)
         }
     }

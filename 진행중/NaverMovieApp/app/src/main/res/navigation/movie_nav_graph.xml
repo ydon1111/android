@@ -9,8 +9,11 @@
         android:id="@+id/movieListFragment"
         android:name="com.example.navermovieapp.ui.fragments.MovieListFragment"
         android:label="fragment_movie_list"
-        tools:layout="@layout/fragment_movie_list" >
+        tools:layout="@layout/fragment_movie_list">
 
+        <action
+            android:id="@+id/action_movieListFragment_to_movieWebViewFragment"
+            app:destination="@id/movieWebViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/movieWebViewFragment"

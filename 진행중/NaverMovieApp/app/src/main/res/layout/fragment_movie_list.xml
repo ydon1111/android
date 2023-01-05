@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.MovieListFragment">
 
     <EditText
@@ -18,13 +18,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-
     <Button
         android:id="@+id/btn_recent"
         android:layout_width="101dp"
         android:layout_height="38dp"
         android:text="최근검색"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_view_movie"
+        app:layout_constraintBottom_toTopOf="@+id/recycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toEndOf="@+id/btn_search"
@@ -36,14 +35,14 @@
         android:layout_width="97dp"
         android:layout_height="45dp"
         android:text="검색"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_view_movie"
+        app:layout_constraintBottom_toTopOf="@+id/recycler"
         app:layout_constraintStart_toEndOf="@+id/et_movie_search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.727" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_movie"
-        android:layout_width="367dp"
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
         android:layout_height="630dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"

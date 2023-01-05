@@ -11,8 +11,11 @@ import com.example.navermovieapp.databinding.ItemMovieBinding
 import com.example.navermovieapp.model.MovieItem
 import com.example.navermovieapp.util.DataParseUtil
 
-class MovieListAdapter: PagingDataAdapter<MovieItem, MovieListAdapter.MovieViewHolder>(differCallback) {
-    companion object{
+
+class MovieListAdapter :
+    PagingDataAdapter<MovieItem, MovieListAdapter.MovieViewHolder>(differCallback) {
+
+    companion object {
         private val differCallback = object : DiffUtil.ItemCallback<MovieItem>() {
             override fun areItemsTheSame(oldItem: MovieItem, newItem: MovieItem): Boolean {
                 return oldItem.image == newItem.image
@@ -38,8 +41,9 @@ class MovieListAdapter: PagingDataAdapter<MovieItem, MovieListAdapter.MovieViewH
         )
     }
 
-    inner class MovieViewHolder(private val binding: ItemMovieBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: MovieItem?){
+    inner class MovieViewHolder(private val binding: ItemMovieBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: MovieItem?) {
             binding.apply {
                 Glide.with(root)
                     .load(item?.image)
@@ -47,24 +51,23 @@ class MovieListAdapter: PagingDataAdapter<MovieItem, MovieListAdapter.MovieViewH
                     .placeholder(R.drawable.img_not_found)
                     .into(ivMovieImage)
                 itemView.setOnClickListener {
-                    onItemClickListener?.let{it(item!!)}
+                    onItemClickListener?.let { it(item!!) }
                 }
                 tvMovieTitle.text = "${DataParseUtil.removeTags(item?.title)}"
                 tvMoviePubDate.text = "${item?.pubDate}"
-                tvMovieRating.text = "${item?.userRating}"
-
+                tvMovieRating.text = item?.userRating.toString()
             }
         }
     }
 
 
-
     private var onItemClickListener: ((MovieItem) -> Unit)? = null
+
+
 
     fun setOnItemClickListener(listener: (MovieItem) -> Unit) {
         onItemClickListener = listener
     }
-
 
 
 }

@@ -10,5 +10,5 @@ data class MovieItem(
     val link: String,
     val image: String,
     val pubDate: String,
-    val userRating: Double = 0.0,
+    val userRating: String,
 ) : Parcelable

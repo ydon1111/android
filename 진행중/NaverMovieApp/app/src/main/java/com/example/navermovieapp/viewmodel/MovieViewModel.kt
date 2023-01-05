@@ -26,15 +26,18 @@ class MovieViewModel @Inject constructor(
      private val repository: MovieRepository,
 ) : ViewModel() {
 
+
+
     fun addSearchData(keyword: Keyword) = viewModelScope.launch {
-        return@launch
         repository.insert(keyword)
     }
     fun getSavedKeywords() = repository.getKeywords()
+
     fun deleteKeyword(keyword: Keyword) = viewModelScope.launch {
         repository.deleteKeyword(keyword)
     }
-    private val _searchQuery: MutableStateFlow<String> = MutableStateFlow("플로우")
+    private val _searchQuery:MutableStateFlow<String> = MutableStateFlow("테스트")
+
     val searchQuery get(): StateFlow<String> = _searchQuery
 
     fun postKeyword(searchQuery: String){
