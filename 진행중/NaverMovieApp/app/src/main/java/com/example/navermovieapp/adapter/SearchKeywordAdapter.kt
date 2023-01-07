@@ -15,24 +15,13 @@ class SearchKeywordAdapter : ListAdapter<Keyword, SearchKeywordAdapter.SearchVie
         fun bind(item: Keyword) {
             binding.apply {
                 searchTermText.text = item.keyword
-
-                itemView.setOnClickListener {
+                constraintSearchItem.setOnClickListener {
                     onSearchKeywordClickListener?.let { it(item) }
                 }
             }
         }
     }
-    companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<Keyword>() {
-            override fun areItemsTheSame(oldItem: Keyword, newItem: Keyword): Boolean {
-                return oldItem.id == newItem.id
-            }
 
-            override fun areContentsTheSame(oldItem: Keyword, newItem: Keyword): Boolean {
-                return oldItem == newItem
-            }
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         return SearchViewHolder(
@@ -53,4 +42,17 @@ class SearchKeywordAdapter : ListAdapter<Keyword, SearchKeywordAdapter.SearchVie
         onSearchKeywordClickListener = listener
     }
 
+
+    companion object {
+        val diffUtil = object : DiffUtil.ItemCallback<Keyword>() {
+            override fun areItemsTheSame(oldItem: Keyword, newItem: Keyword): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Keyword, newItem: Keyword): Boolean {
+                return oldItem == newItem
+            }
+
+        }
+    }
 }

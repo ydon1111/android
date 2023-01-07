@@ -127,20 +127,24 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
         }
 
         movieAdapter.setOnItemClickListener { item ->
-            val action = MovieListFragmentDirections.actionMovieListFragmentToMovieWebViewFragment(item)
+            val action =
+                MovieListFragmentDirections.actionMovieListFragmentToMovieWebViewFragment(item)
             findNavController().navigate(action)
         }
 
         searchKeywordAdapter.apply {
-            setOnSearchKeywordClickListener { item ->
-                viewModel.postKeyword(item.keyword)
-            }
             registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
                 override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
                     super.onItemRangeInserted(positionStart, itemCount)
                     binding.searchHistoryRecyclerView.smoothScrollToPosition(0)
                 }
             })
+        }
+
+        searchKeywordAdapter.setOnSearchKeywordClickListener { item ->
+            viewModel.postKeyword(item.keyword)
+            binding.searchHistoryView.isVisible = false
+            binding.searchView.isVisible = true
         }
     }
 

@@ -27,9 +27,4 @@
         android:name="movieItem"
         app:argType="com.example.navermovieapp.model.MovieItem"/>
     </fragment>
-    <fragment
-        android:id="@+id/movieSearchHistoryFragment"
-        android:name="com.example.navermovieapp.ui.fragments.MovieSearchHistoryFragment"
-        android:label="fragment_movie_search_history"
-        tools:layout="@layout/fragment_movie_search_history" />
 </navigation>
