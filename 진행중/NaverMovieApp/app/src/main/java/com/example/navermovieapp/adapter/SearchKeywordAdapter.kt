@@ -1,33 +1,27 @@
 package com.example.navermovieapp.adapter
 
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-
-import com.example.navermovieapp.databinding.FragmentMovieListBinding
+import com.example.navermovieapp.databinding.ItemSearchBinding
 import com.example.navermovieapp.model.Keyword
 
-class SearchKeywordAdapter: ListAdapter<Keyword,SearchKeywordAdapter.SearchViewHolder>(diffUtil){
-
-    private lateinit var searchedWord: String
-    inner class SearchViewHolder(val binding: FragmentMovieListBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: Keyword){
+class SearchKeywordAdapter : ListAdapter<Keyword, SearchKeywordAdapter.SearchViewHolder>(diffUtil) {
+    inner class SearchViewHolder(val binding: ItemSearchBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: Keyword) {
             binding.apply {
-                searchedWord = binding.etMovieSearch.text.toString()
-                searchedWord = item.keyword
+                searchTermText.text = item.keyword
 
-//                btnSearch.setOnClickListener {
-//                    searchedWord = binding.etMovieSearch.toString()
-//                }
-//                btnRecent.setOnClickListener {
-//                }
-
+                itemView.setOnClickListener {
+                    onSearchKeywordClickListener?.let { it(item) }
+                }
             }
         }
     }
-
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<Keyword>() {
             override fun areItemsTheSame(oldItem: Keyword, newItem: Keyword): Boolean {
@@ -41,11 +35,22 @@ class SearchKeywordAdapter: ListAdapter<Keyword,SearchKeywordAdapter.SearchViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
-            TODO()
+        return SearchViewHolder(
+            ItemSearchBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(getItem(holder.bindingAdapterPosition))
+    }
+
+    private var onSearchKeywordClickListener: ((Keyword) -> Unit)? = null
+    fun setOnSearchKeywordClickListener(listener: (Keyword) -> Unit) {
+        onSearchKeywordClickListener = listener
     }
 
 }

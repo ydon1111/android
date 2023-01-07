@@ -10,14 +10,26 @@
         android:name="com.example.navermovieapp.ui.fragments.MovieListFragment"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list">
-
+        <argument
+            android:name="movieItem"
+            app:argType="com.example.navermovieapp.model.MovieItem"/>
         <action
             android:id="@+id/action_movieListFragment_to_movieWebViewFragment"
-            app:destination="@id/movieWebViewFragment" />
+            app:destination="@id/movieWebViewFragment" >
+        </action>
     </fragment>
     <fragment
         android:id="@+id/movieWebViewFragment"
         android:name="com.example.navermovieapp.ui.fragments.MovieWebViewFragment"
         android:label="fragment_movie_web_view"
-        tools:layout="@layout/fragment_movie_web_view" />
+        tools:layout="@layout/fragment_movie_web_view">
+    <argument
+        android:name="movieItem"
+        app:argType="com.example.navermovieapp.model.MovieItem"/>
+    </fragment>
+    <fragment
+        android:id="@+id/movieSearchHistoryFragment"
+        android:name="com.example.navermovieapp.ui.fragments.MovieSearchHistoryFragment"
+        android:label="fragment_movie_search_history"
+        tools:layout="@layout/fragment_movie_search_history" />
 </navigation>

@@ -62,9 +62,6 @@ class MovieListAdapter :
 
 
     private var onItemClickListener: ((MovieItem) -> Unit)? = null
-
-
-
     fun setOnItemClickListener(listener: (MovieItem) -> Unit) {
         onItemClickListener = listener
     }

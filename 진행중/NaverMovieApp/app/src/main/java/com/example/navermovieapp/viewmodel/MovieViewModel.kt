@@ -28,6 +28,8 @@ class MovieViewModel @Inject constructor(
 
 
 
+
+
     fun addSearchData(keyword: Keyword) = viewModelScope.launch {
         repository.insert(keyword)
     }
@@ -36,7 +38,7 @@ class MovieViewModel @Inject constructor(
     fun deleteKeyword(keyword: Keyword) = viewModelScope.launch {
         repository.deleteKeyword(keyword)
     }
-    private val _searchQuery:MutableStateFlow<String> = MutableStateFlow("테스트")
+    private val _searchQuery:MutableStateFlow<String> = MutableStateFlow("인생은아름다워")
 
     val searchQuery get(): StateFlow<String> = _searchQuery
 

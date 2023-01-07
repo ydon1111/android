@@ -5,16 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.paging.ExperimentalPagingApi
 import com.example.navermovieapp.R
+import com.example.navermovieapp.databinding.FragmentMovieSearchHistoryBinding
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
-class MovieSearchHistoryFragment : Fragment() {
+@AndroidEntryPoint
+@ExperimentalPagingApi
+@ExperimentalCoroutinesApi
+class MovieSearchHistoryFragment : Fragment(R.layout.fragment_movie_search_history) {
+    private var _binding: FragmentMovieSearchHistoryBinding? = null
+    val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_search_history, container, false)
+        _binding = FragmentMovieSearchHistoryBinding.inflate(inflater,container,false)
+
+
+        return binding.root
     }
 }

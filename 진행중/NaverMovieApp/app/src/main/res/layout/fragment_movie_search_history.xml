@@ -27,6 +27,20 @@
         app:layout_constraintTop_toBottomOf="@id/activity_title"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        />
+
+    <TextView
+        android:id="@+id/search_history_recycler_view_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="최근 검색어"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 
 
 
