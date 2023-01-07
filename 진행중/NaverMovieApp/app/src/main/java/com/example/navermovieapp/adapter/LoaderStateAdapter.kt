@@ -21,7 +21,6 @@ class LoaderStateAdapter(private val retry: () -> Unit) :
                 parent, false
             ), retry
         )
-
     }
 
     class LoaderViewHolder(private val binding: ItemMovieLoaderBinding, retry: () -> Unit) :

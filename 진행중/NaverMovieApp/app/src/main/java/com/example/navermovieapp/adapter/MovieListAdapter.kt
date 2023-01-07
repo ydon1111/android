@@ -11,7 +11,6 @@ import com.example.navermovieapp.databinding.ItemMovieBinding
 import com.example.navermovieapp.model.MovieItem
 import com.example.navermovieapp.util.DataParseUtil
 
-
 class MovieListAdapter :
     PagingDataAdapter<MovieItem, MovieListAdapter.MovieViewHolder>(differCallback) {
 
@@ -53,18 +52,15 @@ class MovieListAdapter :
                 itemView.setOnClickListener {
                     onItemClickListener?.let { it(item!!) }
                 }
-                tvMovieTitle.text = "${DataParseUtil.removeTags(item?.title)}"
-                tvMoviePubDate.text = "${item?.pubDate}"
-                tvMovieRating.text = item?.userRating.toString()
+                tvMovieTitle.text = "제목 : ${DataParseUtil.removeTags(item?.title)}"
+                tvMoviePubDate.text = "출시 : ${item?.pubDate}"
+                tvMovieRating.text = "평점 : ${item?.userRating.toString()}"
             }
         }
     }
-
 
     private var onItemClickListener: ((MovieItem) -> Unit)? = null
     fun setOnItemClickListener(listener: (MovieItem) -> Unit) {
         onItemClickListener = listener
     }
-
-
 }

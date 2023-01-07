@@ -12,7 +12,6 @@ import com.example.navermovieapp.util.Constants.PAGE_SIZE
 import retrofit2.HttpException
 import java.io.IOException
 
-
 @ExperimentalPagingApi
 class MovieListPagingSource(val movieApi: MovieApi, val searchQuery: String) :
     PagingSource<Int, MovieItem>() {
@@ -25,11 +24,11 @@ class MovieListPagingSource(val movieApi: MovieApi, val searchQuery: String) :
                 PAGE_SIZE, page
             )
 
-            Log.d("data@@@", page.toString() + " " + response.total)
+            Log.d("pageCount@@@", page.toString() + " " + response.total)
+
             LoadResult.Page(
                 response.items,
                 prevKey = null,
-
                 nextKey = if (page + PAGE_SIZE >= response.total) null else page + PAGE_SIZE
             )
         } catch (e: IOException) {

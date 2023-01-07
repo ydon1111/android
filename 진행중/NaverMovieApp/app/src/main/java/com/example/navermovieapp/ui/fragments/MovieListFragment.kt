@@ -71,8 +71,6 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
         historyTitle()
         returnMain()
 
-
-
         return binding.root
     }
 
@@ -85,6 +83,8 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
                 if (list.size == 10) viewModel.deleteKeyword(list[list.size - 1])
                 viewModel.addSearchData(Keyword(keyword = searchedWord))
                 viewModel.postKeyword(searchedWord)
+
+                binding.etMovieSearch.setText(null)
             }
         }
     }

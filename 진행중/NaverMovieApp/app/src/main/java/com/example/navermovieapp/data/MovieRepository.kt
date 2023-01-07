@@ -8,11 +8,8 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface MovieRepository {
-
     fun letMovieList(searchQuery: String): Flow<PagingData<MovieItem>>
     suspend fun insert(keyword: Keyword): Long
     fun getKeywords(): Flow<List<Keyword>>
     suspend fun deleteKeyword(keyword: Keyword)
-
-
 }

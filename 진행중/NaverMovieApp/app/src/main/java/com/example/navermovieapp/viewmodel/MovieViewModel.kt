@@ -26,10 +26,6 @@ class MovieViewModel @Inject constructor(
      private val repository: MovieRepository,
 ) : ViewModel() {
 
-
-
-
-
     fun addSearchData(keyword: Keyword) = viewModelScope.launch {
         repository.insert(keyword)
     }
@@ -46,7 +42,7 @@ class MovieViewModel @Inject constructor(
         _searchQuery.value = searchQuery
     }
     val result = searchQuery.flatMapLatest {
-        Log.d("결과값@@@", it)
+        Log.d("검색어@@@", it)
         repository.letMovieList(it).cachedIn(viewModelScope)
     }
 }
