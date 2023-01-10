@@ -40,7 +40,6 @@ fun HomeScreen(
         is MarsUiState.Success -> ResultScreen(marsUiState = marsUiState.photos, modifier)
         is MarsUiState.Error -> ErrorScreen(modifier)
     }
-
 }
 
 /**
