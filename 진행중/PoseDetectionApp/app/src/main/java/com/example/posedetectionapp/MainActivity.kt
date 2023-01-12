@@ -11,6 +11,7 @@ import android.graphics.SurfaceTexture
 import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -18,6 +19,7 @@ import android.os.HandlerThread
 import android.view.Surface
 import android.view.TextureView
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import com.example.posedetectionapp.ml.LiteModelMovenetSingleposeLightningTfliteFloat164
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.ImageProcessor
@@ -90,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                 val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
                 var mutable = bitmap.copy(Bitmap.Config.ARGB_8888,true)
-                var canvas = Canvas()
+                var canvas = Canvas(mutable)
 
                 var h = bitmap.height
                 var w = bitmap.width
@@ -131,7 +133,7 @@ class MainActivity : AppCompatActivity() {
                             }
 
                             override fun onConfigureFailed(p0: CameraCaptureSession) {
-                                TODO("Not yet implemented")
+
                             }
 
                         },
@@ -140,11 +142,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onDisconnected(p0: CameraDevice) {
-                    TODO("Not yet implemented")
+
                 }
 
                 override fun onError(p0: CameraDevice, p1: Int) {
-                    TODO("Not yet implemented")
+
                 }
             },
             handler
@@ -152,12 +154,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    @SuppressLint("NewApi")
+
+
     fun get_permissions() {
         if (checkSelfPermission(android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 101)
         }
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
