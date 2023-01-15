@@ -91,18 +91,23 @@ class MainActivity : AppCompatActivity() {
                 val outputs = model.process(inputFeature0)
                 val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
-                var mutable = bitmap.copy(Bitmap.Config.ARGB_8888,true)
+                var mutable = bitmap.copy(Bitmap.Config.ARGB_8888, true)
                 var canvas = Canvas(mutable)
 
                 var h = bitmap.height
                 var w = bitmap.width
                 var x = 0
 
-                while (x <= 49 ){
-                    if(outputFeature0.get(x+2) > 0.45){
-                        canvas.drawCircle(outputFeature0.get(x+1)*w,outputFeature0.get(x)*h,10f,paint)
+                while (x <= 49) {
+                    if (outputFeature0.get(x + 2) > 0.45) {
+                        canvas.drawCircle(
+                            outputFeature0.get(x + 1) * w,
+                            outputFeature0.get(x) * h,
+                            10f,
+                            paint
+                        )
                     }
-                    x +=3
+                    x += 3
                 }
 
                 imageView.setImageBitmap(mutable)
@@ -142,18 +147,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onDisconnected(p0: CameraDevice) {
-
                 }
 
                 override fun onError(p0: CameraDevice, p1: Int) {
-
                 }
             },
             handler
         )
     }
-
-
 
 
     fun get_permissions() {

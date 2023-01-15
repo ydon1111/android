@@ -11,6 +11,7 @@ import com.example.navermovieapp.model.MovieItem
 import com.example.navermovieapp.util.Constants.PAGE_SIZE
 import kotlinx.coroutines.flow.Flow
 
+// Bridge Pattern
 
 @OptIn(ExperimentalPagingApi::class)
 class MovieRepositoryImpl(
