@@ -10,4 +10,27 @@ fun main(args: Array<String>) {
         ***==================================***
     """.trimIndent())
 
+    val categories = arrayOf("패션","전자기기","반려동물용품")
+    for (category in categories){
+        println(category)
+    }
+    println("=> 장바구니로 이동하시려면 #을 입력해주세요")
+
+    var selectedCategory = readLine()
+
+    while (selectedCategory.isNullOrBlank()){
+        println("값을 입력해주세요 ")
+        selectedCategory = readLine()
+    }
+
+    if (selectedCategory == "#"){
+        // TODO("장바구니이동")
+    }
+    else{
+        // TODO("카테고리 상품 목록 보여주기")
+        // TODO("카테고리 상품 목록에 없는 값을 입력하는 경우")
+    }
+
+
+
 }
