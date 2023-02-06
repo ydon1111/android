@@ -4,7 +4,8 @@ package com.shoppi.app.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.shoppi.app.Banner
+
+import com.shoppi.app.model.Banner
 import com.shoppi.app.model.Title
 import com.shoppi.app.repository.HomeRepository
 
