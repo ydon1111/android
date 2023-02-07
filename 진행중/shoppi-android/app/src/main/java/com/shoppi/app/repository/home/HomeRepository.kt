@@ -1,4 +1,4 @@
-package com.shoppi.app.repository
+package com.shoppi.app.repository.home
 
 import com.shoppi.app.model.HomeData
 

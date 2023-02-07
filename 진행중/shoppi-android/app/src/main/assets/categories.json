@@ -43,12 +43,6 @@
       "updated": false
     },
     {
-      "category_id": "fashion-male",
-      "label": "남성패션",
-      "thumbnail_image_url": "",
-      "updated": false
-    },
-    {
       "category_id": "pets",
       "label": "반려동물",
       "thumbnail_image_url": "https://user-images.githubusercontent.com/66169252/217129860-5995f403-d657-4ccd-ae1e-1590d922f9b4.jpg",
@@ -71,12 +65,12 @@
       "label": "식품",
       "thumbnail_image_url": "https://user-images.githubusercontent.com/66169252/217129856-76a0689c-4266-4acf-80e6-ddefaeead258.jpg",
       "updated": false
-    },    {
+    },
+    {
       "category_id": "beauty",
       "label": "뷰티",
       "thumbnail_image_url": "https://user-images.githubusercontent.com/66169252/217129822-d3aecffa-ab0b-4ee7-b7a7-8d08748d809a.jpg",
       "updated": true
     }
   ]
-
 }

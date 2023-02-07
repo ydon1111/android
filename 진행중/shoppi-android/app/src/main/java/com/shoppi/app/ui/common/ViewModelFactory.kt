@@ -5,7 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.shoppi.app.AssetLoader
 import com.shoppi.app.network.ApiClient
-import com.shoppi.app.repository.*
+import com.shoppi.app.repository.category.CategoryRemoteDataSource
+import com.shoppi.app.repository.category.CategoryRepository
+import com.shoppi.app.repository.home.HomeAssetDataSource
+import com.shoppi.app.repository.home.HomeRepository
 import com.shoppi.app.ui.category.CategoryViewModel
 import com.shoppi.app.ui.home.HomeViewModel
 

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 
 import com.shoppi.app.model.Banner
 import com.shoppi.app.model.Title
-import com.shoppi.app.repository.HomeRepository
+import com.shoppi.app.repository.home.HomeRepository
 
 class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {
 
