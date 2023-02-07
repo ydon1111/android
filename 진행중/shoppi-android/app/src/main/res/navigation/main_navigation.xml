@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_category"
-        android:name="com.shoppi.app.ui.CategoryFragment"
+        android:name="com.shoppi.app.ui.category.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
     <fragment
