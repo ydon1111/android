@@ -1,11 +1,13 @@
 package com.shoppi.app.network
 
 import com.shoppi.app.model.Category
+import com.shoppi.app.model.CategoryDetail
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 
 interface ApiClient {
@@ -13,11 +15,18 @@ interface ApiClient {
     @GET("categories.json")
     suspend fun getCategories(): List<Category>
 
-    companion object{
+    @GET("fashion_female.json")
+    suspend fun getCategoryDetail(): CategoryDetail
 
-        private const val baseUrl = "https://shoppi-2f8bf-default-rtdb.asia-southeast1.firebasedatabase.app/"
+//    @GET("{categoryId}.json")
+//    suspend fun getCategoryDetail(@Path("categoryId") categoryId: String): CategoryDetail
 
-        fun create(): ApiClient{
+    companion object {
+
+        private const val baseUrl =
+            "https://shoppi-2f8bf-default-rtdb.asia-southeast1.firebasedatabase.app/"
+
+        fun create(): ApiClient {
             val logger = HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BASIC
             }
