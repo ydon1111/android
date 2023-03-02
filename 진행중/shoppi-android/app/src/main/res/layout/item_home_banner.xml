@@ -16,7 +16,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:onClick="@{()->viewModel.openProductDetail(banner.productDetail.productId)}">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_banner_image"
@@ -33,6 +34,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="202dp"
+            android:background="@drawable/background_black_gradient"
             app:layout_constraintBottom_toBottomOf="@id/iv_banner_image"
             app:layout_constraintEnd_toEndOf="@id/iv_banner_image"
             app:layout_constraintStart_toStartOf="@id/iv_banner_image" />
@@ -150,6 +152,7 @@
             android:id="@+id/tv_banner_detail_product_price"
             style="@style/TextCaption1.Grey05"
             priceAmount="@{banner.productDetail.price}"
+            strikeThrough="@{true}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
