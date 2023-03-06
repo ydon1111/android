@@ -14,6 +14,7 @@ import com.shoppi.app.repository.home.HomeAssetDataSource
 import com.shoppi.app.repository.home.HomeRepository
 import com.shoppi.app.repository.productdetail.ProductDetailRemoteDataSource
 import com.shoppi.app.repository.productdetail.ProductDetailRepository
+import com.shoppi.app.ui.cart.CartViewModel
 import com.shoppi.app.ui.category.CategoryViewModel
 import com.shoppi.app.ui.categorydetail.CategoryDetailViewModel
 import com.shoppi.app.ui.home.HomeViewModel
@@ -40,6 +41,9 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
             modelClass.isAssignableFrom(ProductDetailViewModel::class.java) ->{
                 val repository = ProductDetailRepository(ProductDetailRemoteDataSource(ServiceLocator.provideApiClient()))
                 ProductDetailViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(CartViewModel::class.java)->{
+                CartViewModel() as T
             }
 
 

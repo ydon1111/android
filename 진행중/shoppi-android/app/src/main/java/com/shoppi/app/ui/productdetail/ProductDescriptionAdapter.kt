@@ -5,13 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.shoppi.app.databinding.ItemProductDescriptionBinding
+import com.shoppi.app.databinding.ItemCategoryDescriptionBinding
 import com.shoppi.app.model.Description
 
-class ProductDescriptionAdapter: ListAdapter<Description,ProductDescriptionAdapter.DescriptionViewHolder>(ProductDescriptionDiffCallback()) {
+class ProductDescriptionAdapter :
+    ListAdapter<Description, ProductDescriptionAdapter.DescriptionViewHolder>(
+        ProductDescriptionDiffCallback()
+    ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DescriptionViewHolder {
-        val binding = ItemProductDescriptionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemCategoryDescriptionBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return DescriptionViewHolder(binding)
     }
 
@@ -19,7 +26,7 @@ class ProductDescriptionAdapter: ListAdapter<Description,ProductDescriptionAdapt
         holder.bind(getItem(position))
     }
 
-    class DescriptionViewHolder(private val binding: ItemProductDescriptionBinding) :
+    class DescriptionViewHolder(private val binding: ItemCategoryDescriptionBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(description: Description) {
