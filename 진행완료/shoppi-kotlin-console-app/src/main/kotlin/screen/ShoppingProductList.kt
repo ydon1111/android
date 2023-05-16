@@ -70,7 +70,7 @@ class ShoppingProductList(private val selectedCategory: String) : Screen()  {
                 // TODO 그 외 값 처리
             }
         } ?: kotlin.run {
-            println("$selectedIndex 번은 목록에 없느 상품 번호 입니다. 다시 입력해 주세요.")
+            println("$selectedIndex 번은 목록에 없는 상품 번호 입니다. 다시 입력해 주세요.")
             showProducts()
         }
 
