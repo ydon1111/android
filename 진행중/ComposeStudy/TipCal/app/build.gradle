@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.yeongdon.petdiary'
+    namespace 'com.yeongdon.tipcal'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.yeongdon.petdiary"
+        applicationId "com.yeongdon.tipcal"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -63,6 +63,7 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    //Icons
+    implementation "androidx.compose.material:material-icons-extended"
 
-    implementation "androidx.navigation:navigation-compose:$nav_version"
 }
