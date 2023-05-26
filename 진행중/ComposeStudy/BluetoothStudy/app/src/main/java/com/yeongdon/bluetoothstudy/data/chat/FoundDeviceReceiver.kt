@@ -7,7 +7,6 @@ import android.content.Intent
 import android.os.Build
 
 
-@Suppress("IMPLICIT_CAST_TO_ANY")
 class FoundDeviceReceiver(
     private val onDeviceFound: (BluetoothDevice) -> Unit
 ) : BroadcastReceiver() {
@@ -18,13 +17,13 @@ class FoundDeviceReceiver(
                 // sdk 33 버전 이상만 getParcelableExtra 가 동작
                 val device = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     intent.getParcelableExtra(
-                        BluetoothDevice.EXTRA_NAME,
+                        BluetoothDevice.EXTRA_DEVICE,
                         BluetoothDevice::class.java
                     )
                 } else {
-                    intent.getParcelableArrayExtra(BluetoothDevice.EXTRA_NAME)
+                    intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)
                 }
-                device?.let { onDeviceFound }
+                device?.let(onDeviceFound)
             }
         }
     }

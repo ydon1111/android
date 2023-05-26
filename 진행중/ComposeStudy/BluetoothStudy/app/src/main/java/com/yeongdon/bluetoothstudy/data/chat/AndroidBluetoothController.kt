@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.util.Log
 import com.yeongdon.bluetoothstudy.domain.chat.BluetoothController
 import com.yeongdon.bluetoothstudy.domain.chat.BluetoothDeviceDomain
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,8 +19,8 @@ import kotlinx.coroutines.flow.update
 
 @SuppressLint("MissingPermission")
 class AndroidBluetoothController(
-    private val context : Context
-): BluetoothController {
+    private val context: Context
+) : BluetoothController {
 
     private val bluetoothManager by lazy {
         context.getSystemService(BluetoothManager::class.java)
@@ -33,15 +34,20 @@ class AndroidBluetoothController(
     override val scannedDevices: StateFlow<List<BluetoothDeviceDomain>>
         get() = _scannedDevices.asStateFlow()
 
-    private val _pairedDevice = MutableStateFlow<List<BluetoothDeviceDomain>>(emptyList())
-    override val pairDevices: StateFlow<List<BluetoothDeviceDomain>>
-        get() = _pairedDevice.asStateFlow()
+    private val _pairedDevices = MutableStateFlow<List<BluetoothDeviceDomain>>(emptyList())
+    override val pairedDevices: StateFlow<List<BluetoothDeviceDomain>>
+        get() = _pairedDevices.asStateFlow()
 
-    private val foundDeviceReceiver = FoundDeviceReceiver {device ->
-        _scannedDevices.update {devices ->
+    private val foundDeviceReceiver = FoundDeviceReceiver { device ->
+        _scannedDevices.update { devices ->
             val newDevice = device.toBluetoothDeviceDomain()
-            if(newDevice in devices ) devices else devices + newDevice
+
+//            Log.d("newDeviceList",  "$newDevice")
+
+            if (newDevice in devices) devices else devices + newDevice
+
         }
+
     }
 
     init {
@@ -49,7 +55,7 @@ class AndroidBluetoothController(
     }
 
     override fun startDiscovery() {
-        if(!hasPermission(Manifest.permission.BLUETOOTH_SCAN)){
+        if (!hasPermission(Manifest.permission.BLUETOOTH_SCAN)) {
             return
         }
 
@@ -64,7 +70,7 @@ class AndroidBluetoothController(
     }
 
     override fun stopDiscovery() {
-        if(!hasPermission(Manifest.permission.BLUETOOTH_SCAN)){
+        if (!hasPermission(Manifest.permission.BLUETOOTH_SCAN)) {
             return
         }
 
@@ -72,13 +78,14 @@ class AndroidBluetoothController(
     }
 
     override fun release() {
+
         context.unregisterReceiver(foundDeviceReceiver)
     }
 
     // Device 전환 확인
 
-    private fun updatePairedDevice(){
-        if(!hasPermission(Manifest.permission.BLUETOOTH_CONNECT)){
+    private fun updatePairedDevice() {
+        if (!hasPermission(Manifest.permission.BLUETOOTH_CONNECT)) {
             return
         }
         bluetoothAdapter
@@ -86,13 +93,13 @@ class AndroidBluetoothController(
             ?.map {
                 it.toBluetoothDeviceDomain()
             }
-            ?.also {  devices -> _pairedDevice.update { devices } }
+            ?.also { devices -> _pairedDevices.update { devices } }
 
     }
 
 
     // 권한 관리
-    private fun hasPermission(permission: String): Boolean{
+    private fun hasPermission(permission: String): Boolean {
         return context.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
     }
 }
