@@ -24,7 +24,10 @@ import com.yeongdon.bluetoothstudy.presentation.BluetoothUiState
 fun DeviceScreen(
     state: BluetoothUiState,
     onStartScan: () -> Unit,
-    onStopScan: () -> Unit
+    onStopScan: () -> Unit,
+    onStartServer: () -> Unit,
+    onDeviceClick: (BluetoothDevice) -> Unit,
+
 ) {
     Column(
         modifier = Modifier.fillMaxSize()
@@ -32,7 +35,7 @@ fun DeviceScreen(
         BluetoothDeviceList(
             pairedDevices = state.pairedDevices,
             scannedDevices = state.scannedDevices,
-            onClick = {},
+            onClick = onDeviceClick,
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
@@ -46,6 +49,9 @@ fun DeviceScreen(
             }
             Button(onClick = onStopScan) {
                 Text(text = "블루투스 찾기 중지")
+            }
+            Button(onClick = onStartServer) {
+                Text(text = "서버 열기")
             }
         }
     }
