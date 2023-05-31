@@ -51,7 +51,7 @@ fun DeviceScreen(
                 Text(text = "블루투스 찾기 중지")
             }
             Button(onClick = onStartServer) {
-                Text(text = "서버 열기")
+                Text(text = "서버 시작")
             }
         }
     }

@@ -13,6 +13,7 @@ import android.content.pm.PackageManager
 import android.util.Log
 import com.yeongdon.bluetoothstudy.domain.chat.BluetoothController
 import com.yeongdon.bluetoothstudy.domain.chat.BluetoothDeviceDomain
+import com.yeongdon.bluetoothstudy.domain.chat.BluetoothMessage
 import com.yeongdon.bluetoothstudy.domain.chat.ConnectionResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,8 +24,10 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -44,6 +47,10 @@ class AndroidBluetoothController(
     private val bluetoothAdapter by lazy {
         bluetoothManager?.adapter
     }
+
+    private var dataTransferService: BluetoothDataTransferService? = null
+
+
     private val _isConnected = MutableStateFlow(false)
     override val isConnected: StateFlow<Boolean>
         get() = _isConnected.asStateFlow()
@@ -77,7 +84,7 @@ class AndroidBluetoothController(
             _isConnected.update { isConnected }
         } else {
             CoroutineScope(Dispatchers.IO).launch {
-                _errors.tryEmit("paired한 디바이스만 연결됩니다.")
+                _errors.emit("paired한 디바이스만 연결됩니다.")
             }
         }
     }
@@ -142,6 +149,16 @@ class AndroidBluetoothController(
                 emit(ConnectionResult.ConnectionEstablished)
                 currentClientSocket?.let {
                     currentServerSocket?.close()
+                    val service = BluetoothDataTransferService(it)
+                    dataTransferService = service
+
+                    emitAll(
+                        service
+                            .listenForIncomingMessages()
+                            .map {
+                                ConnectionResult.TransferSucceeded(it)
+                            }
+                    )
                 }
             }
         }.onCompletion {
@@ -155,26 +172,26 @@ class AndroidBluetoothController(
                 throw SecurityException("BLUETOOTH_CONNECT 권한이 없습니다.")
             }
 
-            val bluetoothDevice = bluetoothAdapter?.getRemoteDevice(device.address)
-
-            currentClientSocket = bluetoothDevice
+            currentClientSocket = bluetoothAdapter
+                ?.getRemoteDevice(device.address)
                 ?.createRfcommSocketToServiceRecord(
                     UUID.fromString(SERVICE_UUID)
                 )
             stopDiscovery()
-            if (bluetoothAdapter?.bondedDevices?.contains(bluetoothDevice) == false) {
-
-
-            }
-
-
-
-
 
             currentClientSocket?.let { socket ->
                 try {
                     socket.connect()
                     emit(ConnectionResult.ConnectionEstablished)
+
+                    BluetoothDataTransferService(socket).also {
+                        dataTransferService = it
+                        emitAll(
+                            it.listenForIncomingMessages()
+                                .map { ConnectionResult.TransferSucceeded(it) }
+                        )
+                    }
+
                 } catch (e: IOException) {
                     socket.close()
                     currentClientSocket = null
@@ -184,6 +201,26 @@ class AndroidBluetoothController(
         }.onCompletion {
             closeConnection()
         }.flowOn(Dispatchers.IO)
+    }
+
+    override suspend fun trySendMessage(message: String): BluetoothMessage? {
+        if (!hasPermission(Manifest.permission.BLUETOOTH_CONNECT)) {
+            return null
+        }
+
+        if(dataTransferService == null){
+            return null
+        }
+
+        val bluetoothMessage = BluetoothMessage(
+            message = message,
+            senderName = bluetoothAdapter?.name ?: "알수없음",
+            isFromLocalUser = true
+        )
+
+        dataTransferService?.sendMessage(bluetoothMessage.toByteArray())
+
+        return bluetoothMessage
     }
 
     override fun closeConnection() {

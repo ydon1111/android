@@ -25,6 +25,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.yeongdon.bluetoothstudy.presentation.components.ChatScreen
 import com.yeongdon.bluetoothstudy.presentation.components.DeviceScreen
 import com.yeongdon.bluetoothstudy.ui.theme.BluetoothStudyTheme
 
@@ -92,9 +93,9 @@ class MainActivity : ComponentActivity() {
                         ).show()
                     }
                 }
-                
-                LaunchedEffect(key1 = state.isConnected){
-                    if(state.isConnected){
+
+                LaunchedEffect(key1 = state.isConnected) {
+                    if (state.isConnected) {
                         Toast.makeText(
                             applicationContext,
                             "연결 완료!",
@@ -117,6 +118,14 @@ class MainActivity : ComponentActivity() {
                                 CircularProgressIndicator()
                                 Text(text = "접속중...")
                             }
+                        }
+
+                        state.isConnected -> {
+                            ChatScreen(
+                                state = state,
+                                onDisconnect = viewModel::disconnectFromDevice,
+                                onSendMessage = viewModel::sendMessage
+                            )
                         }
 
                         else -> {
