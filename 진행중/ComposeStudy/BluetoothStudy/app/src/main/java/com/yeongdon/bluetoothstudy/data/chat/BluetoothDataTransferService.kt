@@ -10,9 +10,11 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 import java.io.IOException
 
+// message 관리
 class BluetoothDataTransferService(
     private val socket: BluetoothSocket
 ) {
+    // Bluetooth connection result를 알고 있기 때문에 BluetoothMessage를 받아옴
     fun listenForIncomingMessages(): Flow<BluetoothMessage> {
         return flow {
             if (!socket.isConnected) {

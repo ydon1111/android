@@ -55,7 +55,6 @@ class AndroidBluetoothController(
     override val isConnected: StateFlow<Boolean>
         get() = _isConnected.asStateFlow()
 
-
     // scanned 한 기기와 연결한 기기 상태를 담는다.
     private val _scannedDevices = MutableStateFlow<List<BluetoothDeviceDomain>>(emptyList())
     override val scannedDevices: StateFlow<List<BluetoothDeviceDomain>>
@@ -69,12 +68,12 @@ class AndroidBluetoothController(
     override val errors: SharedFlow<String>
         get() = _errors.asSharedFlow()
 
+
+    //새로운 기기 발견시 업데이트
     private val foundDeviceReceiver = FoundDeviceReceiver { device ->
         _scannedDevices.update { devices ->
             val newDevice = device.toBluetoothDeviceDomain()
-
 //            Log.d("newDeviceList",  "$newDevice")
-
             if (newDevice in devices) devices else devices + newDevice
         }
     }
@@ -104,6 +103,7 @@ class AndroidBluetoothController(
         )
     }
 
+    // 블루투스 스캔 시작
     override fun startDiscovery() {
         if (!hasPermission(Manifest.permission.BLUETOOTH_SCAN)) {
             return
@@ -119,6 +119,7 @@ class AndroidBluetoothController(
         bluetoothAdapter?.startDiscovery()
     }
 
+    // 블루투스 스캔 정지
     override fun stopDiscovery() {
         if (!hasPermission(Manifest.permission.BLUETOOTH_SCAN)) {
             return
@@ -149,6 +150,8 @@ class AndroidBluetoothController(
                 emit(ConnectionResult.ConnectionEstablished)
                 currentClientSocket?.let {
                     currentServerSocket?.close()
+
+                    // Bluetooth 연결 확인후 MessageData 관리
                     val service = BluetoothDataTransferService(it)
                     dataTransferService = service
 
@@ -214,7 +217,7 @@ class AndroidBluetoothController(
 
         val bluetoothMessage = BluetoothMessage(
             message = message,
-            senderName = bluetoothAdapter?.name ?: "알수없음",
+            senderName = bluetoothAdapter?.name ?: "알수 없음",
             isFromLocalUser = true
         )
 
@@ -236,8 +239,7 @@ class AndroidBluetoothController(
         closeConnection()
     }
 
-    // Device 전환 확인
-
+    // Device 목록 관리
     private fun updatePairedDevice() {
         if (!hasPermission(Manifest.permission.BLUETOOTH_CONNECT)) {
             return
@@ -250,7 +252,6 @@ class AndroidBluetoothController(
             ?.also { devices -> _pairedDevices.update { devices } }
 
     }
-
 
     // 권한 관리
     private fun hasPermission(permission: String): Boolean {

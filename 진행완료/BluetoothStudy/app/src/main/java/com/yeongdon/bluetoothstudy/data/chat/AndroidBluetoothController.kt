@@ -237,7 +237,6 @@ class AndroidBluetoothController(
     }
 
     // Device 전환 확인
-
     private fun updatePairedDevice() {
         if (!hasPermission(Manifest.permission.BLUETOOTH_CONNECT)) {
             return

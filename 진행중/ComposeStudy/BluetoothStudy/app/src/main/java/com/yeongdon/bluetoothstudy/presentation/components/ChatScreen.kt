@@ -98,6 +98,7 @@ fun ChatScreen(
             IconButton(onClick = {
                 onSendMessage(message.value)
                 message.value = ""
+                // 채팅 전송 후 키보드 숨김
                 keyboardController?.hide()
             }) {
                 Icon(imageVector = Icons.Default.Send, contentDescription = "Send Message")

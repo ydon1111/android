@@ -12,6 +12,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.yeongdon.bluetoothstudy.domain.chat.BluetoothMessage
 import com.yeongdon.bluetoothstudy.ui.theme.BluetoothStudyTheme
 import com.yeongdon.bluetoothstudy.ui.theme.OldRose
@@ -39,6 +40,11 @@ fun ChatMessage(
             .padding(16.dp)
     ) {
         Text(
+            text = message.senderName,
+            color = Color.Black,
+            fontSize = 10.sp,
+        )
+        Text(
             text = message.message,
             color = Color.Black,
             modifier = Modifier.widthIn(max = 250.dp)
@@ -48,12 +54,14 @@ fun ChatMessage(
 
 @Preview
 @Composable
-fun ChatMessagePreview(){
-    BluetoothStudyTheme{
-        ChatMessage(message = BluetoothMessage(
-            message = "테스트 메시지",
-            senderName = "Note20",
-            isFromLocalUser = false
-        ))
+fun ChatMessagePreview() {
+    BluetoothStudyTheme {
+        ChatMessage(
+            message = BluetoothMessage(
+                message = "테스트 메시지",
+                senderName = "Note20",
+                isFromLocalUser = false
+            )
+        )
     }
 }

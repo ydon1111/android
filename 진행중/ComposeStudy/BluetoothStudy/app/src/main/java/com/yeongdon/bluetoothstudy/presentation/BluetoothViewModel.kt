@@ -79,6 +79,7 @@ class BluetoothViewModel @Inject constructor(
             .listen()
     }
 
+    // message 상태 관리
     fun sendMessage(message: String) {
         viewModelScope.launch {
             val bluetoothMessage = bluetoothController.trySendMessage(message)
