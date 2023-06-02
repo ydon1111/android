@@ -5,5 +5,4 @@ import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-class OmdbApp:Application() {
-}
+class OmdbApp : Application() {}

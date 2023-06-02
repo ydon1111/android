@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ComposeMovieAPP</string>
+    <string name="movie_main">영화</string>
+    <string name="movie_detail">영화 정보</string>
 </resources>
