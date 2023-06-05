@@ -8,3 +8,5 @@ data class Search(
     val imdbID: String,
     var isFavourite: Boolean? = false
 )
+
+

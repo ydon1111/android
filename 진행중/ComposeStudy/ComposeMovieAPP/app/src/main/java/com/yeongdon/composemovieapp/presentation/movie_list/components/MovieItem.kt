@@ -1,5 +1,6 @@
 package com.yeongdon.composemovieapp.presentation.movie_list.components
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,7 +34,6 @@ fun MovieItem(
     onCardClick: () -> Unit,
     viewModel: MovieListViewModel = hiltViewModel()
 ) {
-
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -65,23 +65,17 @@ fun MovieItem(
                     .fillMaxWidth()
             ) {
                 Text(
-                    text = "${movie.Title}.",
+                    text = movie.Title,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier,
                     color = colorResource(id = R.color.dark_blue)
                 )
                 Text(
                     text = movie.Year,
                     fontSize = 16.sp,
-                    modifier = Modifier,
                     color = colorResource(id = R.color.dark_blue)
                 )
-
             }
-
         }
-
     }
-
 }

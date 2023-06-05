@@ -20,30 +20,17 @@ import androidx.navigation.NavController
 import com.yeongdon.composemovieapp.presentation.MovieScreen
 import com.yeongdon.composemovieapp.presentation.movie_list.components.MovieItem
 
-
 @Composable
 fun MovieList(
     navController: NavController,
     viewModel: MovieListViewModel = hiltViewModel()
 ) {
-    val state = viewModel.stateApi.value
-
+    val state = viewModel.state.value
 
     Box(modifier = Modifier.fillMaxSize()) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(state.movies) { movie ->
-
-                MovieItem(movie = movie,
-                    onCardClick = {
-                        navController.navigate(MovieScreen.Detail.screen_route + "/${movie.imdbID}")
-//                        Log.d("MovieClick", "$movie")
-                    }
-
-                )
-            }
-        }
-
-        if (state.error.isNotBlank()) {
+        if (state.isLoading) {
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+        } else if (state.error.isNotBlank()) {
             Text(
                 text = state.error,
                 color = MaterialTheme.colorScheme.error,
@@ -53,13 +40,18 @@ fun MovieList(
                     .padding(horizontal = 20.dp)
                     .align(Alignment.Center)
             )
-        }
-
-        if (state.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-        }
-
-        if (state.movies.isEmpty()) {
+        } else if (state.movies.isNotEmpty()) {
+            LazyColumn(modifier = Modifier.fillMaxSize()) {
+                items(state.movies) { movie ->
+                    MovieItem(
+                        movie = movie,
+                        onCardClick = {
+                            navController.navigate(MovieScreen.Detail.screen_route + "/${movie.imdbID}")
+                        }
+                    )
+                }
+            }
+        } else {
             Text(
                 text = "검색 결과가 없습니다.",
                 textAlign = TextAlign.Center,

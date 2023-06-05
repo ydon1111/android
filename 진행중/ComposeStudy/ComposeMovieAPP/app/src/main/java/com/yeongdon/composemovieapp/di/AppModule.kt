@@ -4,6 +4,7 @@ import com.yeongdon.composemovieapp.common.Constants
 import com.yeongdon.composemovieapp.data.remote.api.OmdbApi
 import com.yeongdon.composemovieapp.data.repository.OmdbRepositoryImpl
 import com.yeongdon.composemovieapp.domain.repository.OmdbRepository
+import com.yeongdon.composemovieapp.presentation.movie_list.MovieListViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,5 +32,7 @@ object AppModule {
     fun provideRepository(api: OmdbApi): OmdbRepository {
         return OmdbRepositoryImpl(api)
     }
+
+
 
 }
